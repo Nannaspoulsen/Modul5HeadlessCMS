@@ -1,42 +1,71 @@
 /* Typografi */
-@import url("https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap");
+
+@import url('https://fonts.googleapis.com/css2?family=Oooh+Baby&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
 
 /* Variables */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
+  --BackgroundWhite: rgba(254, 245, 255, 1);
+  --PalePink: rgba(241, 217, 222, 1);
+  --FreshMint: rgba(202, 233, 140, 1);
+  --SweetPurple: rgba(159, 107, 160, 1);
+
+  --smSpacer: 15px;
+  --stdSpacer: 20px;
+  --lgSpacer: 40px;
+
+  --font-size-small: 0.8rem;
+  --font-size-normal: 1rem;
+  --font-size-large: 1.5rem;
+  --font-size-xlarge: 2rem;
 }
 
 /* General styling */
 
-.result {
-  max-width: 900px;
-  margin: 1rem auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  border-radius: 5px;
-  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.1);
-  padding: 1rem;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Oooh Baby", sans-serif;
 }
 
-article {
-  border: 3px solid #b91d1d;
+p {
+  font-family: "EB Garamond", serif;
+  line-height: 1.5;
 }
 
-article h2 {
-  text-align: center;
+/**********
+/* INDEX */
+/**********/
+
+/* Header + navbar */
+header {
+  background-color: var(--BackgroundWhite);
+  padding: var(--stdSpacer);
 }
-/* Header */
-/* Navbar */
-/* Footer */
-
-
-
-/* ================================
-  MEDIA QUERIES
-  ================================ */
+header .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .navbarLinks {
+  display: flex;
+  align-items: center;
+}
+header .navbar a {
+  text-decoration: none;
+  
+} 
