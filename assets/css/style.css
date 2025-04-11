@@ -1,7 +1,7 @@
 /* Typografi */
 
-@import url('https://fonts.googleapis.com/css2?family=Oooh+Baby&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Oooh+Baby&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap");
 
 /* Variables */
 
@@ -28,7 +28,7 @@ html {
   --font-size-small: 0.8rem;
   --font-size-normal: 1rem;
   --font-size-large: 1.5rem;
-  --font-size-xlarge: 2rem;
+  --font-size-xlarge: 2.5rem;
 }
 
 /* General styling */
@@ -52,20 +52,107 @@ p {
 /**********/
 
 /* Header + navbar */
-header {
-  background-color: var(--BackgroundWhite);
-  padding: var(--stdSpacer);
+.hero {
+  background-image: linear-gradient(
+      rgba(184, 114, 188, 0.4),
+      rgba(229, 229, 229, 0)
+    ),
+    url(../img/pexels-karolina-grabowska-4199098.jpg);
+  width: 100%;
+  height: 400px;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
 }
-header .navbar {
+
+.heroTitle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Garamond", serif;
+  font-size: 3rem;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  text-shadow: 2px 2px 3px rgba(159, 107, 160, 0.468);
+  z-index: 5;
+}
+
+.heroTitle {
+  position: relative;
+  text-align: center;
+}
+
+.navbar {
+  position: absolute;
+  top: 0;
+  left: ;
+  width: 100%;
+  padding: var(--smSpacer);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: rgba(255, 255, 255, 0.149);
+  backdrop-filter: blur(2px);
 }
-header .navbarLinks {
+
+.navbarLinks {
   display: flex;
   align-items: center;
+  list-style: none;
+  padding: var(--stdSpacer);
 }
-header .navbar a {
+
+.navbarLinks li a {
   text-decoration: none;
-  
-} 
+  justify-content: space-between;
+  padding: var(--stdSpacer);
+  color: black;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+.navbarLinks li a:hover {
+  color: var(--SweetPurple);
+  border-bottom: 3px solid var(--SweetPurple);
+}
+
+.navbarLinks li.active a {
+  font-weight: bold;
+}
+
+.søgefelt input {
+  font-family: "EB Garamond", serif;
+  padding: 0.2rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #520069a4;
+  border-radius: 100px;
+  width: 170px;
+}
+
+/* Main */
+
+.intro  {
+  font-size: var(--font-size-xlarge);
+  margin-top: var(--lgSpacer);
+  margin-bottom: var(--smSpacer) 0;
+  padding-left: var(--stdSpacer);
+}
+p {
+  font-size: var(--font-size-normal);
+  padding-left: var(--stdSpacer);
+}
+
+h2, h3 {
+  font-size: var(--font-size-large);
+  margin-top: var(--lgSpacer);
+  margin-bottom: var(--smSpacer) 0;
+  padding-left: var(--stdSpacer);
+}
+
+/* Footer */
+
+footer {
+  display: flex;
+  background-color: var(--PalePink);
+  padding: var(--lgSpacer) 0;
+  justify-content: center;
+}
