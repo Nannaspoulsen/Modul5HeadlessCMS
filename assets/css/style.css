@@ -257,7 +257,7 @@ footer {
 
 .allRecipesSearch {
   margin-top: var(--stdSpacer);
-  margin-bottom: var(--smSpacer) 0;
+  margin-bottom: var(--stdSpacer);
   /* padding-left: var(--lgSpacer) */
   margin-left: 30px;
 }
@@ -270,8 +270,18 @@ footer {
 
 .allRecipesFilter {
   background-color: rgb(25, 177, 25);
+  
 }
 
 .listOfRecipes{
   background-color: red;
+  height: 900px;
+}
+
+.listOfRecipes article{
+  margin-bottom: var(--lgSpacer);
+}
+
+.listOfRecipes img{
+  display: flex;
 }
