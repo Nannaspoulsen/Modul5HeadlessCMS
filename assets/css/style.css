@@ -25,7 +25,7 @@ html {
   --stdSpacer: 20px;
   --lgSpacer: 40px;
 
-/* Hvad skal de her bruges til? */
+  /* Hvad skal de her bruges til? */
 
   --font-size-small: 0.8rem;
   --font-size-normal: 1rem;
@@ -47,16 +47,14 @@ h6 {
 p {
   font-family: "EB Garamond", serif;
   line-height: 1.5;
+  max-width: 65ch;
 }
 
 /**********
 /* INDEX */
 /**********/
 
-
 /* Header + navbar */
-
-
 
 .hero {
   background-image: linear-gradient(
@@ -132,13 +130,9 @@ p {
   width: 170px;
 }
 
-
-
 /* Main */
 
-
-
-.intro  {
+.intro {
   font-size: var(--font-size-xlarge);
   margin-top: var(--lgSpacer);
   margin-bottom: var(--smSpacer) 0;
@@ -149,9 +143,10 @@ p {
   padding-left: var(--lgSpacer);
 }
 
-h2, h3 {
+h2,
+h3 {
   font-size: var(--font-size-large);
-  margin-bottom: var(--smSpacer) ;
+  margin-bottom: var(--smSpacer);
   padding-left: var(--lgSpacer);
 }
 
@@ -225,4 +220,31 @@ footer {
   background-color: var(--PalePink);
   padding: var(--lgSpacer) 0;
   justify-content: center;
+}
+
+/**********
+/* SAESON SAMLING */
+/**********/
+
+.collectionsTitle {
+  font-size: var(--font-size-xlarge);
+  margin-top: var(--lgSpacer);
+  margin-bottom: var(--smSpacer);
+  padding-left: var(--lgSpacer);
+}
+
+.allRecipes {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
+.filterBox {
+  margin: var(--lgSpacer);
+  background-color: rgb(230, 182, 182);
+  height: 900px;
+}
+
+.recipeCards {
+  margin: var(--lgSpacer);
+  background-color: rgb(230, 182, 182);
 }
