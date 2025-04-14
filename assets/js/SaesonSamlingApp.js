@@ -23,7 +23,7 @@ function displayRecipes(recipes) {
     const excerpt = recipe.excerpt.rendered; // En kort beskrivelse som vi skal have oprettet i WordPress
     const img = recipe.acf?.billede?.url || ""; // Henter billedet fra ACF-feltet 'billede'
 
-    // Her gør vi klar til at vise sværhedsgrad og tid (som ligger i taxonomier)
+    // Her gør vi klar til at vise sværhedsgrad og tid (som ligger i taxonomier) Forstod ikke helt det med WP:term, det var noget Thomas forklarede mig. Det skal jeg lige have læst op på!
     const allTerms = recipe._embedded["wp:term"] || [];
     let sværhedsgrad = "Ukendt";
     let tid = "Ukendt";
@@ -40,7 +40,7 @@ function displayRecipes(recipes) {
       });
     });
 
-    // Vi henter antal portioner fra ACF (hvis det er sat)
+    // Vi henter antal portioner - men det har vi ikke styr på i wordpress endnu. Husk lige at få kigget på det sammen.
     const portioner = recipe.acf?.antal_portioner || "N/A";
 
     // Vi laver et HTML-element til opskriften og giver det en klasse
