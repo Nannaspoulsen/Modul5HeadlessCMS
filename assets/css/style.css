@@ -51,7 +51,11 @@ p {
 /* INDEX */
 /**********/
 
+
 /* Header + navbar */
+
+
+
 .hero {
   background-image: linear-gradient(
       rgba(159, 107, 160, 1),
@@ -126,7 +130,11 @@ p {
   width: 170px;
 }
 
+
+
 /* Main */
+
+
 
 .intro  {
   font-size: var(--font-size-xlarge);
