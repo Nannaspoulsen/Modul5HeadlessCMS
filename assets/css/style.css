@@ -54,7 +54,7 @@ p {
 /* Header + navbar */
 .hero {
   background-image: linear-gradient(
-      rgba(184, 114, 188, 0.4),
+      rgba(159, 107, 160, 1),
       rgba(229, 229, 229, 0)
     ),
     url(../img/pexels-karolina-grabowska-4199098.jpg);
@@ -90,7 +90,7 @@ p {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.149);
+  background-color: rgba(254, 245, 255, 0.359);
   backdrop-filter: blur(2px);
 }
 
@@ -110,7 +110,7 @@ p {
 }
 .navbarLinks li a:hover {
   color: var(--SweetPurple);
-  border-bottom: 3px solid var(--SweetPurple);
+  border-bottom: 2px solid var(--SweetPurple);
 }
 
 .navbarLinks li.active a {
