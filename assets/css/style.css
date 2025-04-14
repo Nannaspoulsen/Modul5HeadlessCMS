@@ -219,13 +219,13 @@ h2, h3 {
 }
 
 /* Footer */
-
+/* 
 footer {
   display: flex;
   background-color: var(--PalePink);
   padding: var(--lgSpacer) 0;
   justify-content: center;
-}
+} */
 
 
 
@@ -258,7 +258,6 @@ footer {
 .allRecipesSearch {
   margin-top: var(--stdSpacer);
   margin-bottom: var(--stdSpacer);
-  /* padding-left: var(--lgSpacer) */
   margin-left: 30px;
 }
 
@@ -285,3 +284,22 @@ footer {
 .listOfRecipes img{
   display: flex;
 }
+
+/* FOOTER */
+footer{
+  background-color: var(--PalePink);
+  padding: var(--lgSpacer);
+  
+}
+
+footer ul{
+  list-style-type: none;
+}
+
+footer li{
+  display: inline;
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+}
+
