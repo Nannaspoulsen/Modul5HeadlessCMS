@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <script src="./assets/js/app.js" defer></script>
+    <script src="./assets/js/SaesonSamlingApp.js" defer></script>
 </head>
 
 <body>
@@ -44,6 +44,21 @@
         <div class="filterBox"> Her skal filtrene være</div>
         <div class="recipeCards"> Her skal opskrifterne vise sig</div>
     </div>
+    <div class="recipeModal hidden">
+        <div class="modalIndhold">
+            <span class="lukModal">&times;</span>
+            <img id="modalBillede" src="" alt="" />
+            <h3 id="modalTitel"></h3>
+            <p id="modalBeskrivelse"></p>
+            <!-- Beskrivelsen er ikke oprettet i wordpress - i tvivl om hvordan vi lige gør det smartest-->
+            <a id="modalLink" href="#" target="_blank" class="recipeButton">Se hele opskriften</a>
+            <p><strong>Tilberedningstid:</strong> <span id="modalTid"></span></p>
+            <p><strong>Sværhedsgrad:</strong> <span id="modalSværhedsgrad"></span></p>
+            <!-- <p><strong>Antal portioner:</strong> <span id="modalPortioner"></span></p> -->
+    
+        </div>
+    </div>
+
     </main>
     <footer>
         <p>Privacy policy</p>

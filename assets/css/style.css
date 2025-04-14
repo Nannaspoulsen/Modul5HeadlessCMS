@@ -246,5 +246,75 @@ footer {
 
 .recipeCards {
   margin: var(--lgSpacer);
-  background-color: rgb(230, 182, 182);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+.recipe img {
+  display: block;
+  margin: 0 auto 1rem auto;
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--SweetPurple);
+}
+
+/* Popup Modal */
+
+.recipeModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.559);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.recipeModal.hidden {
+  display: none;
+}
+
+.modalIndhold {
+  background: var(--BackgroundWhite);
+  padding: 2rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+}
+
+.modalIndhold img {
+  width: 100%;
+  height: auto;
+  margin-bottom: var(--smSpacer);
+  border-radius: 8px;
+}
+
+.lukModal {
+  position: absolute;
+  top: 0.1rem;
+  right: 0.6rem;
+  font-size: 2rem;
+  cursor: pointer;
+  color: black;
+}
+
+.recipeButton {
+  display: inline-block;
+  margin: var(--lgSpacer);
+  padding: 1rem 4rem;
+  background-color: var(--PalePink);
+  color: black;
+  text-decoration: none;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.393);
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+.recipeButton:hover {
+  background-color: var(--SweetPurple);
+  transform: scale(1.05);
 }
