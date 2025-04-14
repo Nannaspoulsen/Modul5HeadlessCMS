@@ -85,7 +85,6 @@ p {
 .navbar {
   position: absolute;
   top: 0;
-  left: ;
   width: 100%;
   padding: var(--smSpacer);
   display: flex;
