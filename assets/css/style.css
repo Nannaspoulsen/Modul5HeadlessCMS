@@ -212,12 +212,88 @@ h3 {
 }
 
 /* Footer */
-
+/* 
 footer {
   display: flex;
   background-color: var(--PalePink);
   padding: var(--lgSpacer) 0;
   justify-content: center;
+} */
+
+
+
+
+
+/******************
+/* ALLEOPSKRIFTER */
+/*****************/
+
+/* Main */
+
+.allRecipesIntro {
+  font-size: var(--font-size-xlarge);
+  margin-top: var(--lgSpacer);
+  margin-bottom: var(--smSpacer) 0;
+  /* Hvorfor pludselig padding og ikke margin?? */
+  padding-left: var(--lgSpacer);
+}
+
+.allRecipesSearch input {
+  font-family: "EB Garamond", serif;
+  padding: 0.2rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #520069a4;
+  border-radius: 100px;
+  width: 170px;
+
+}
+
+.allRecipesSearch {
+  margin-top: var(--stdSpacer);
+  margin-bottom: var(--stdSpacer);
+  margin-left: 30px;
+}
+
+.allRecipesBody {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 2rem;
+}
+
+.allRecipesFilter {
+  background-color: rgb(25, 177, 25);
+
+}
+
+.listOfRecipes {
+  background-color: red;
+  height: 900px;
+}
+
+.listOfRecipes article {
+  margin-bottom: var(--lgSpacer);
+}
+
+.listOfRecipes img {
+  display: flex;
+}
+
+/* FOOTER */
+footer {
+  background-color: var(--PalePink);
+  padding: var(--lgSpacer);
+
+}
+
+footer ul {
+  list-style-type: none;
+}
+
+footer li {
+  display: inline;
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
 }
 
 /**********
@@ -360,3 +436,61 @@ footer {
   background-color: var(--SweetPurple);
   transform: scale(1.05);
 }
+.allRecipesSearch input {
+  font-family: "EB Garamond", serif;
+  padding: 0.2rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #520069a4;
+  border-radius: 100px;
+  width: 170px;
+
+}
+
+.allRecipesSearch {
+  margin-top: var(--stdSpacer);
+  margin-bottom: var(--stdSpacer);
+  margin-left: 30px;
+}
+
+.allRecipesBody{
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 2rem;
+}
+
+.allRecipesFilter {
+  background-color: rgb(25, 177, 25);
+  
+}
+
+.listOfRecipes{
+  background-color: red;
+  height: 900px;
+}
+
+.listOfRecipes article{
+  margin-bottom: var(--lgSpacer);
+}
+
+.listOfRecipes img{
+  display: flex;
+}
+
+/* FOOTER */
+footer{
+  background-color: var(--PalePink);
+  padding: var(--lgSpacer);
+  
+}
+
+footer ul{
+  list-style-type: none;
+}
+
+footer li{
+  display: inline;
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+}
+
