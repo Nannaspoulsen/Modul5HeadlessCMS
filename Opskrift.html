@@ -1,22 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Recipe | Culinary Cloud</title>
-    <meta name="description"
-        content="The perfect recipe for a delightful dish that brings together fresh ingredients and vibrant flavors.">
-    <meta name="keywords"
-        content="recipe, cooking, culinary, fresh ingredients, vibrant flavors, delicious dish">
+    <title>Opskrift</title>
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <script src="./assets/js/app.js" defer></script>
+    <script src="./assets/js/opskrift.js" defer></script>
 </head>
 
 <body>
     <header>
-        <h1>TEMPLATE</h1>
+        <div class="navbar">
+            <div class="navbarLogo">
+                <a href="./index.html">
+                    <img src="" alt="Logo" />
+                </a>
+            </div>
+            <ul class="navbarLinks">
+                <li><a href="./Index.html">Home</a></li>
+                <li><a href="./AlleOpskrifter.html">All Recipes</a></li>
+                <li><a href="./SaesonSamling.html">Spring Collection</a></li>
+                <li><a href="./FamilieSamling.html">Cooking With Kids Collection</a></li>
+            </ul>
+            <div class="søgefelt">
+                <input type="text" placeholder="Search..." />
+            </div>
+            <div class="login">
+                <a href="">Login</a>
+            </div>
+        </div>
+        <div class="hero">
+            <h1 class="heroTitle">CulinaryCloud</h1>
+        </div>
     </header>
+
+    <main>
+        <div class="fullRecipe">
+            <h1 class="recipeTitel"></h1>
+            <p class="recipeText"></p>
+            <img class="recipeImg" src="" alt="" />
+            <div class="recipeBox">
+                <div class="ingredients"></div>
+                <div class="instructions"></div>
+            </div>
+        </div>
+    </main>
+    </main>
+
+    <footer>
+        <p>Privacy policy</p>
+        <p>Copyright</p>
+        <p>Contact</p>
+        <p>Cookies</p>
+    </footer>
 </body>
 
 </html>

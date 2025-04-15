@@ -66,7 +66,7 @@ function displayRecipes(recipes) {
       document.getElementById("modalTitel").innerHTML = title;
       document.getElementById("modalTid").textContent = tid;
       document.getElementById("modalSværhedsgrad").textContent = sværhedsgrad;
-      document.getElementById("modalLink").href = recipe.link;
+      document.getElementById("modalLink").href = `opskrift.html?id=${recipe.id}`; // Her linker vi til opskriften
       //HUSK at indsætte link til opskrift siden her!
       //TODO: Vis antal portioner, når du vil bruge det
       //TODO: Tilføj beskrivelsen når du har lavet excerpt eller ACF-beskrivelse
