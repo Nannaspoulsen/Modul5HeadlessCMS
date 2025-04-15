@@ -25,6 +25,8 @@ html {
   --stdSpacer: 20px;
   --lgSpacer: 40px;
 
+  /* Hvad skal de her bruges til? */
+
   --font-size-small: 0.8rem;
   --font-size-normal: 1rem;
   --font-size-large: 1.5rem;
@@ -45,28 +47,25 @@ h6 {
 p {
   font-family: "EB Garamond", serif;
   line-height: 1.5;
+  max-width: 65ch;
 }
 
 /**********
 /* INDEX */
 /**********/
 
-
 /* Header + navbar */
-
-
 
 .hero {
   background-image: linear-gradient(
       rgba(159, 107, 160, 1),
       rgba(229, 229, 229, 0)
     ),
-    url(../img/pexels-karolina-grabowska-4199098.jpg);
+    url(../img/COLOURBOX29693617.jpg);
   width: 100%;
-  height: 450px;
+  height: 550px;
   background-position: center;
   background-size: cover;
-  overflow: hidden;
 }
 
 .heroTitle {
@@ -77,7 +76,6 @@ p {
   font-family: "Oooh Baby", sans-serif;
   font-size: 5rem;
   color: rgb(0, 0, 0);
-  text-shadow: 2px 2px 3px rgba(159, 107, 160, 0.468);
   z-index: 5;
 }
 
@@ -130,13 +128,9 @@ p {
   width: 170px;
 }
 
-
-
 /* Main */
 
-
-
-.intro  {
+.intro {
   font-size: var(--font-size-xlarge);
   margin-top: var(--lgSpacer);
   margin-bottom: var(--smSpacer) 0;
@@ -147,9 +141,10 @@ p {
   padding-left: var(--lgSpacer);
 }
 
-h2, h3 {
+h2,
+h3 {
   font-size: var(--font-size-large);
-  margin-bottom: var(--smSpacer) ;
+  margin-bottom: var(--smSpacer);
   padding-left: var(--lgSpacer);
 }
 
@@ -217,10 +212,285 @@ h2, h3 {
 }
 
 /* Footer */
-
+/* 
 footer {
   display: flex;
   background-color: var(--PalePink);
   padding: var(--lgSpacer) 0;
   justify-content: center;
+} */
+
+
+
+
+
+/******************
+/* ALLEOPSKRIFTER */
+/*****************/
+
+/* Main */
+
+.allRecipesIntro {
+  font-size: var(--font-size-xlarge);
+  margin-top: var(--lgSpacer);
+  margin-bottom: var(--smSpacer) 0;
+  /* Hvorfor pludselig padding og ikke margin?? */
+  padding-left: var(--lgSpacer);
 }
+
+.allRecipesSearch input {
+  font-family: "EB Garamond", serif;
+  padding: 0.2rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #520069a4;
+  border-radius: 100px;
+  width: 170px;
+
+}
+
+.allRecipesSearch {
+  margin-top: var(--stdSpacer);
+  margin-bottom: var(--stdSpacer);
+  margin-left: 30px;
+}
+
+.allRecipesBody {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 2rem;
+}
+
+.allRecipesFilter {
+  background-color: rgb(25, 177, 25);
+
+}
+
+.listOfRecipes {
+  background-color: red;
+  height: 900px;
+}
+
+.listOfRecipes article {
+  margin-bottom: var(--lgSpacer);
+}
+
+.listOfRecipes img {
+  display: flex;
+}
+
+/* FOOTER */
+footer {
+  background-color: var(--PalePink);
+  padding: var(--lgSpacer);
+
+}
+
+footer ul {
+  list-style-type: none;
+}
+
+footer li {
+  display: inline;
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+}
+
+/**********
+/* SAESON SAMLING */
+/**********/
+
+.collectionsTitle {
+  font-size: var(--font-size-xlarge);
+  margin-top: var(--lgSpacer);
+  margin-bottom: var(--smSpacer);
+  padding-left: var(--lgSpacer);
+}
+
+.allRecipes {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
+
+.recipeCards {
+  margin: var(--lgSpacer);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+.recipe img {
+  display: block;
+  margin: 0 auto 1rem auto;
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--SweetPurple);
+}
+
+/* Filterfelt */
+
+.filterBox {
+  background-color: var(--PalePink);
+  padding: var(--lgSpacer);
+  margin: var(--lgSpacer);
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+
+.filterBox h3 {
+  margin-bottom: 1rem;
+}
+
+.filterBox h4 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--SweetPurple);
+}
+
+.filterBox label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.filterBox input[type="checkbox"] {
+  margin-right: 0.5rem;
+  transform: scale(1.2);
+}
+
+#applyFilters {
+  margin-top: 1.5rem;
+  padding: 0.75rem 1rem;
+  background-color: var(--PalePink);
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+}
+
+#applyFilters:hover {
+  background-color: var(--SweetPurple);
+}
+
+/* Popup Modal */
+
+.recipeModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.559);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.recipeModal.hidden {
+  display: none;
+}
+
+.modalIndhold {
+  background: var(--BackgroundWhite);
+  padding: 2rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+}
+
+.modalIndhold img {
+  width: 100%;
+  height: auto;
+  margin-bottom: var(--smSpacer);
+  border-radius: 8px;
+}
+
+.lukModal {
+  position: absolute;
+  top: 0.1rem;
+  right: 0.6rem;
+  font-size: 2rem;
+  cursor: pointer;
+  color: black;
+}
+
+.recipeButton {
+  display: inline-block;
+  margin: var(--lgSpacer);
+  padding: 1rem 4rem;
+  background-color: var(--PalePink);
+  color: black;
+  text-decoration: none;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.393);
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+.recipeButton:hover {
+  background-color: var(--SweetPurple);
+  transform: scale(1.05);
+}
+.allRecipesSearch input {
+  font-family: "EB Garamond", serif;
+  padding: 0.2rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #520069a4;
+  border-radius: 100px;
+  width: 170px;
+
+}
+
+.allRecipesSearch {
+  margin-top: var(--stdSpacer);
+  margin-bottom: var(--stdSpacer);
+  margin-left: 30px;
+}
+
+.allRecipesBody{
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 2rem;
+}
+
+.allRecipesFilter {
+  background-color: rgb(25, 177, 25);
+  
+}
+
+.listOfRecipes{
+  background-color: red;
+  height: 900px;
+}
+
+.listOfRecipes article{
+  margin-bottom: var(--lgSpacer);
+}
+
+.listOfRecipes img{
+  display: flex;
+}
+
+/* FOOTER */
+footer{
+  background-color: var(--PalePink);
+  padding: var(--lgSpacer);
+  
+}
+
+footer ul{
+  list-style-type: none;
+}
+
+footer li{
+  display: inline;
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+}
+
