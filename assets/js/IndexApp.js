@@ -1,63 +1,45 @@
-// Endpoints
-const domain = "https://www.menneskevaerk.com/";
-const postsEndpoint = "wp-json/wp/v2/posts/";
-const getRealImageUrls = "?acf_format=standard";
+document.addEventListener("DOMContentLoaded", () => {
+  const slideContainer = document.getElementById("slideshow");
+
+  // Hent opskrifter fra WordPress
+  fetch("https://www.menneskevaerk.com/wp-json/wp/v2/posts?acf_format=standard&_embed&per_page=8")
+    .then((res) => res.json())
+    .then((recipes) => {
+      recipes.forEach((recipe) => {
+        const title = recipe.title.rendered;
+        const img = recipe.acf?.billede?.url || "./assets/img/fallback.jpg";
+
+        const card = document.createElement("div");
+        card.classList.add("slideshowCard");
+
+        card.innerHTML = `
+  <div class="cardImage">
+    <img src="${img}" alt="${title}">
+  </div>
+  <div class="cardText">
+    <h4>${title}</h4>
+  </div>
+`;
 
 
-// DOM hooks
-const resultEl = document.querySelector(".result");
+        card.addEventListener("click", () => {
+          window.location.href = `opskrift.html?id=${recipe.id}`;
+        });
 
-//Relevante ID'er
-const longTimeId = 10;
-const mediumTimeId = 9;
-const shortTimeId = 8;
+        slideContainer.appendChild(card);
+      });
+    })
+    .catch((err) => {
+      console.error("Fejl ved hentning af slideshow:", err);
+    });
 
+  // Pilefunktion – scroll containeren horisontalt
+  document.querySelector(".leftBtn").addEventListener("click", () => {
+    document.getElementById("slideshow").scrollLeft -= 300;
+  });
 
-fetchAllRecipes();
-
-function fetchAllRecipes () {
-    fetch (domain + postsEndpoint + getRealImageUrls)
-    .then (res => res.json())
-    .then (data => renderRecipes(data))
-    .catch (err => console.log(err));
-}
-
-// Der kan også laves et fetch efter Id. 
-
-function fetchRecipeById(id) {
-    fetch(domain + postsEndpoint + "/" + id)
-        .then(res => res.json())
-        .then(data => renderRecipes(data))
-        .catch(err => console.log(err))
-}
- 
- 
-function renderRecipes(data) {
-    if (Array.isArray(data)) {
-        data.forEach(recipe => {
-            console.log('recipe:', recipe)
-            resultEl.innerHTML += `
-            <article>
-                <h2>${recipe.title.rendered}</h2>
-                ${recipe.content.rendered}
-            </article>
-            `;
-        })
-    } else {
-        resultEl.innerHTML += `
-            <article>
-                <h2>${data.title.rendered}</h2>
-                ${data.content.rendered}
-            </article>`
-    }
-}
-
-function renderRecipes (data){
-data.forEach(recipe => {
-    resultEl.innerHTML += `
-    <article>
-        <h2>${recipe.title.rendered}</h2>
-        ${recipe.content.rendered}
-      </article>`;
-})};
+  document.querySelector(".rightBtn").addEventListener("click", () => {
+    document.getElementById("slideshow").scrollLeft += 300;
+  });
+});
 

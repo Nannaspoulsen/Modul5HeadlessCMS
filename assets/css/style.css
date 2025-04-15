@@ -45,7 +45,7 @@ h6 {
   font-family: "Oooh Baby", sans-serif;
 }
 
-p{
+p {
   font-family: "EB Garamond", serif;
   line-height: 1.5;
   max-width: 65ch;
@@ -70,7 +70,7 @@ p{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-family: "Oooh Baby", sans-serif; 
+  font-family: "Oooh Baby", sans-serif;
   font-size: 8rem;
   color: white;
   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
@@ -90,7 +90,7 @@ nav {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  background-color: rgba(254, 245, 255, 0.359);
+  background-color: rgba(255, 255, 255, 0.549);
   backdrop-filter: blur(2px);
 }
 
@@ -112,7 +112,7 @@ nav li a {
 }
 
 nav li a:hover {
-  color: var(--SweetPurple);
+  color: white;
   border-bottom: 2px solid var(--SweetPurple);
 }
 
@@ -154,6 +154,48 @@ h3 {
   justify-content: space-evenly;
 }
 
+/* Focused Entry Points */
+
+.collectionsEntryPoints {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  padding: var(--lgSpacer);
+  margin-bottom: 55px;
+}
+
+.entryBox {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  border: 1px solid #767676;
+  border-radius: 5px;
+  width: 450px;
+  background-color: white;
+  transition: transform 0.2s ease;
+  overflow: hidden;
+}
+
+.entryBox:hover {
+  transform: scale(1.09);
+}
+
+.entryBox img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.entryHeader {
+  background-color: var(--PalePink);
+  padding: 1rem;
+  text-align: center;
+  font-family: "Oooh Baby", sans-serif;
+  color: black;
+  font-size: var(--font-size-large);
+}
+
 .signupText {
   flex: 2;
   width: 500px;
@@ -169,8 +211,8 @@ h3 {
 }
 
 .signupButtons {
-  padding-top: 30px;
-  flex: 1;
+  padding-top: 50px;
+  flex: 2;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -204,12 +246,86 @@ h3 {
   scale: 1.09;
 }
 
-.slideshowContainer {
-  padding-top: var(--lgSpacer);
-}
+/* Slideshow */
 
+.slideshowContainer {
+  padding: var(--lgSpacer);
+  margin-top: var(--lgSpacer);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 .slideshowContainer h3 {
   font-size: var(--font-size-xlarge);
+  margin-bottom: var(--smSpacer);
+  padding-left: var(--lgSpacer);
+}
+
+.slideshowWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#slideshow {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 1rem;
+  padding: 1rem 0;
+  /* Det sørger for, at scroll stopper scrollen automatisk "pænt" ved næste billede i rækken – i stedet for at stoppe midt imellem to. */
+  scroll-snap-type: x mandatory;
+  /* Sørger for at indholdet bliver på én lang linje */
+  white-space: nowrap;
+}
+
+.slideshowCard {
+  flex: 0 0 300px;
+  max-width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: white;
+  scroll-snap-align: start;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.slideshowCard:hover {
+  transform: scale(1.02);
+}
+
+.slideshowCard img {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.slideshowCard h4 {
+  font-family: var("EB Garamond"), serif;
+  font-size: var(--font-size-large);
+  padding: var(--smSpacer);
+}
+
+.slideNav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.slideBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.slideBtn img {
+  width: 40px;
+  height: auto;
+  transition: transform 0.2s ease;
+}
+
+.slideBtn:hover img {
+  transform: scale(1.2);
 }
 
 /* FOOTER */
@@ -217,7 +333,6 @@ h3 {
 footer {
   background-color: var(--PalePink);
   padding: var(--lgSpacer);
-
 }
 
 footer ul {
@@ -230,8 +345,6 @@ footer li {
   justify-content: center;
   justify-content: space-between;
 }
-
-
 
 /******************
 /* ALLEOPSKRIFTER */
@@ -254,7 +367,6 @@ footer li {
   border: 1px solid #520069a4;
   border-radius: 100px;
   width: 170px;
-
 }
 
 .allRecipesSearch {
@@ -262,7 +374,6 @@ footer li {
   margin-bottom: var(--stdSpacer);
   margin-left: 30px;
 }
-
 
 .listOfRecipes {
   background-color: red;
@@ -276,7 +387,6 @@ footer li {
 .listOfRecipes img {
   display: flex;
 }
-
 
 /**********
 /* ALLE SAMLINGER + ALLE OPSKRIFTER */
@@ -293,7 +403,6 @@ footer li {
   display: grid;
   grid-template-columns: 1fr 3fr;
 }
-
 
 .recipeCards {
   margin: var(--lgSpacer);
@@ -425,7 +534,6 @@ footer li {
   border: 1px solid #520069a4;
   border-radius: 100px;
   width: 170px;
-
 }
 
 .allRecipesSearch {
@@ -434,7 +542,7 @@ footer li {
   margin-left: 30px;
 }
 
-.allRecipesBody{
+.allRecipesBody {
   display: grid;
   grid-template-columns: 1fr 3fr;
   gap: 2rem;
@@ -442,34 +550,32 @@ footer li {
 
 .allRecipesFilter {
   background-color: rgb(25, 177, 25);
-  
 }
 
-.listOfRecipes{
+.listOfRecipes {
   background-color: red;
   height: 900px;
 }
 
-.listOfRecipes article{
+.listOfRecipes article {
   margin-bottom: var(--lgSpacer);
 }
 
-.listOfRecipes img{
+.listOfRecipes img {
   display: flex;
 }
 
 /* FOOTER */
-footer{
+footer {
   background-color: var(--PalePink);
   padding: var(--lgSpacer);
-  
 }
 
-footer ul{
+footer ul {
   list-style-type: none;
 }
 
-footer li{
+footer li {
   display: inline;
   display: flex;
   justify-content: center;
@@ -481,7 +587,7 @@ footer li{
 /**********/
 
 /* BOKS MED INGREDIENSER OG FREMGANGSMÅDE */
-img{
+img {
   float: right;
   margin: 20px;
 }
