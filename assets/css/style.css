@@ -81,7 +81,7 @@ p {
   text-align: center;
 }
 
-.navbar {
+nav {
   position: absolute;
   top: 0;
   width: 100%;
@@ -93,26 +93,29 @@ p {
   backdrop-filter: blur(2px);
 }
 
-.navbarLinks {
-  display: flex;
-  align-items: center;
-  list-style: none;
-  padding: var(--stdSpacer);
+.navbarLogo img {
+  height: 60px;
+  width: 60px;
 }
 
-.navbarLinks li a {
+nav ul {
+  list-style-type: none;
+}
+
+nav li a {
   text-decoration: none;
   justify-content: space-between;
   padding: var(--stdSpacer);
   color: black;
   transition: color 0.3s ease, border-bottom 0.3s ease;
 }
-.navbarLinks li a:hover {
+
+nav li a:hover {
   color: var(--SweetPurple);
   border-bottom: 2px solid var(--SweetPurple);
 }
 
-.navbarLinks li.active a {
+nav a.active {
   font-weight: bold;
 }
 
