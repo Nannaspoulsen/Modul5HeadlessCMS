@@ -5,7 +5,7 @@ const recipeId = params.get("id");
 // Hvis der ikke er noget ID, vis en fejl
 if (!recipeId) {
   document.querySelector(".fullRecipe").innerHTML =
-    "<p>Ingen opskrift blev fundet 😕</p>";
+    "<p>The recipe could not be retrieved😕</p>";
 } else {
   // Byg URL til WordPress API
   const url = `https://www.menneskevaerk.com/wp-json/wp/v2/posts/${recipeId}?acf_format=standard&_embed`;
@@ -22,7 +22,7 @@ if (!recipeId) {
 
       // Hent fremgangsmåde fra ACF-gruppefelt
       const fremgangsmaade =
-        recipe.acf?.fremgangsmaade?.fremgangsmaade || "Fremgangsmåde mangler";
+        recipe.acf?.fremgangsmaade?.fremgangsmaade || "Instructions missing";
 
       // Hent ingredienser: det er en gruppe med flere felter (1_ingredienser, 2_ingredienser, osv.)
       const ingrediensObjekt = recipe.acf?.ingredienser || {};
@@ -40,13 +40,13 @@ if (!recipeId) {
 
       // Vis ingredienser
       document.querySelector(".ingredients").innerHTML = `
-        <h2>🧾 Ingredienser</h2>
+        <h2> Ingrediens </h2>
         <ul>${ingrediensListe}</ul>
       `;
 
       // Vis fremgangsmåde
     document.querySelector(".instructions").innerHTML = `
-  <h2>👩‍🍳 Fremgangsmåde</h2>
+  <h2>Intructions</h2>
   <ol>${fremgangsListe}</ol>
 `;
 
@@ -54,6 +54,6 @@ if (!recipeId) {
     .catch((err) => {
       console.error("Fejl ved hentning af opskrift:", err);
       document.querySelector(".fullRecipe").innerHTML =
-        "<p>Opskriften kunne ikke hentes 😢</p>";
+        "<p>The recipe could not be retrieved😢</p>";
     });
 }

@@ -20,6 +20,7 @@ html {
   --PalePink: rgba(241, 217, 222, 1);
   --FreshMint: rgba(202, 233, 140, 1);
   --SweetPurple: rgba(159, 107, 160, 1);
+  --Coral: rgba(247, 183, 163, 1);
 
   --smSpacer: 15px;
   --stdSpacer: 20px;
@@ -44,7 +45,7 @@ h6 {
   font-family: "Oooh Baby", sans-serif;
 }
 
-p {
+p{
   font-family: "EB Garamond", serif;
   line-height: 1.5;
   max-width: 65ch;
@@ -475,3 +476,35 @@ footer li{
   justify-content: space-between;
 }
 
+/**********
+/* OPSKRIFTTER  */
+/**********/
+
+/* BOKS MED INGREDIENSER OG FREMGANGSMÅDE */
+img{
+  float: right;
+  margin: 20px;
+}
+
+.recipeBox {
+  clear: both;
+  background-color: coral;
+  display: grid;
+  grid-template-columns: 1fr 5px 2fr;
+  margin: 20px;
+  gap: 20px;
+}
+
+.ingredients,
+.instructions {
+  padding: 40px;
+}
+
+/* hr {
+  display: flex;
+  margin: 4px;
+  padding: 2px;
+  background: black;
+  border-radius: 8px;
+  transform: rotate(90deg);
+  width: 300px;} */
