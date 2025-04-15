@@ -236,11 +236,6 @@ footer {
   grid-template-columns: 1fr 3fr;
 }
 
-.filterBox {
-  margin: var(--lgSpacer);
-  background-color: rgb(230, 182, 182);
-  height: 900px;
-}
 
 .recipeCards {
   margin: var(--lgSpacer);
@@ -254,6 +249,55 @@ footer {
   max-width: 100%;
   height: auto;
   border: 1px solid var(--SweetPurple);
+}
+
+/* Filterfelt */
+
+.filterBox {
+  background-color: var(--PalePink);
+  padding: var(--lgSpacer);
+  margin: var(--lgSpacer);
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+
+.filterBox h3 {
+  margin-bottom: 1rem;
+}
+
+.filterBox h4 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--SweetPurple);
+}
+
+.filterBox label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.filterBox input[type="checkbox"] {
+  margin-right: 0.5rem;
+  transform: scale(1.2);
+}
+
+#applyFilters {
+  margin-top: 1.5rem;
+  padding: 0.75rem 1rem;
+  background-color: var(--PalePink);
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+}
+
+#applyFilters:hover {
+  background-color: var(--SweetPurple);
 }
 
 /* Popup Modal */
