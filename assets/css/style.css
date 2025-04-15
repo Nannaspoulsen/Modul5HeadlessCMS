@@ -20,6 +20,8 @@ html {
   --PalePink: rgba(241, 217, 222, 1);
   --FreshMint: rgba(202, 233, 140, 1);
   --SweetPurple: rgba(159, 107, 160, 1);
+  --Coral: rgba(247, 183, 163, 1);
+
 
   --smSpacer: 15px;
   --stdSpacer: 20px;
@@ -494,3 +496,12 @@ footer li{
   justify-content: space-between;
 }
 
+
+/**********
+/* OPSKRIFT */
+/**********/
+
+.recipeBox{
+  background-color: coral;
+  grid-template-columns: 2;
+}
