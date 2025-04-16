@@ -4,50 +4,57 @@ const fullUrl = domain + "wp-json/wp/v2/posts?opskriftsamling=63&acf_format=stan
 
 // Her henter vi data (opskrifter) fra WordPress første gang siden loades
 fetch(fullUrl)
-  .then(res => res.json()) // Vi laver svaret om til noget JavaScript kan arbejde med
+// Vi laver svaret om til noget JavaScript kan arbejde med
+  .then(res => res.json()) 
   .then(data => {
-    displayRecipes(data); // Når data er klar, viser vi opskrifterne på siden
+    // Når data er klar, viser vi opskrifterne på siden
+    displayRecipes(data); 
   })
   .catch(err => {
-    console.error("Noget gik galt:", err); // Hvis noget går galt, vis fejl i konsollen
+    // Hvis noget går galt, vis fejl i konsollen
+    console.error("Noget gik galt:", err); 
   });
 
-// Funktion der viser alle opskrifter på siden
+// Funktion der viser alle opskrifter på siden. Recipes er det navn vi nu giver opskrifter
 function displayRecipes(recipes) {
-  const container = document.querySelector(".recipeCards"); // Finder boksen vi vil putte opskrifterne i
-  container.innerHTML = ""; // Sørger for den er tom før vi starter
+  // Finder boksen vi vil putte opskrifterne i
+  const container = document.querySelector(".recipeCards"); 
+  // Sørger for den er tom før vi starter
 
-  // 💡 Hvis der ikke er nogen opskrifter, vis en brugervenlig besked og stop
+  container.innerHTML = ""; 
+  // Hvis der ikke er en opskrift, så vises der en fejlmeddelelse
   if (recipes.length === 0) {
-    container.innerHTML = "<p style='text-align: center; padding: 2rem;'>Ingen opskrifter matcher dine filtre - ØV! Prøv noget andet.</p>";
+    container.innerHTML = "<p style='text-align: center; padding: 2rem;'>Sorry, no recepies found. Try again .</p>";
     return;
   }
 
   // Vi går gennem alle opskrifter én efter én
   recipes.forEach(recipe => {
-    const title = recipe.title.rendered; // Opskriftens titel
-    const excerpt = recipe.excerpt.rendered; // En kort beskrivelse som vi skal have oprettet i WordPress
-    const img = recipe.acf?.billede?.url || ""; // Henter billedet fra ACF-feltet 'billede'
-
-    // Her gør vi klar til at vise sværhedsgrad og tid (som ligger i taxonomier) Forstod ikke helt det med WP:term, det var noget Thomas forklarede mig. Det skal jeg lige have læst op på!
-    const allTerms = recipe._embedded["wp:term"] || [];
+    // Opskriftens titel
+    const title = recipe.title.rendered; 
+    // Opskriftens beskrivelse
+    const excerpt = recipe.excerpt.rendered; 
+    // Henter billedet fra ACF-feltet 'billede'
+    const img = recipe.acf?.billede?.url || "<p>Picture missing</p>"; 
+    // Her gør vi klar til at vise sværhedsgrad og tid (som ligger i taxonomier). 
+    const allTaxo = recipe._embedded["wp:term"] || [];
     let sværhedsgrad = "Ukendt";
     let tid = "Ukendt";
 
     // De taxonomier vi bruger: sværhedsgrad og tilberedningstid
-    allTerms.forEach(termGroup => {
-      termGroup.forEach(term => {
-        if (term.taxonomy === "svaerhedsgrad") {
-          sværhedsgrad = term.name;
+    allTaxo.forEach(taxoGroup => {
+      taxoGroup.forEach(taxo => {
+        if (taxo.taxonomy === "svaerhedsgrad") {
+          sværhedsgrad = taxo.name;
         }
-        if (term.taxonomy === "tilberedningstid") {
-          tid = term.name;
+        if (taxo.taxonomy === "tilberedningstid") {
+          tid = taxo.name;
         }
       });
     });
 
-    // Vi henter antal portioner - men det har vi ikke styr på i wordpress endnu. Husk lige at få kigget på det sammen.
-    const portioner = recipe.acf?.antal_portioner || "N/A";
+    // Vi henter antal portioner
+    const portioner = recipe.acf?.antal_portioner || "";
 
     // Vi laver et HTML-element til opskriften og giver det en klasse
     const article = document.createElement("article");
@@ -62,12 +69,10 @@ function displayRecipes(recipes) {
     // Når brugeren klikker på opskriften, åbner vi en popup med mere info
     article.addEventListener("click", () => {
       document.getElementById("modalBillede").src = img;
-      document.getElementById("modalBillede").alt = title;
       document.getElementById("modalTitel").innerHTML = title;
       document.getElementById("modalTid").textContent = tid;
       document.getElementById("modalSværhedsgrad").textContent = sværhedsgrad;
       document.getElementById("modalLink").href = `opskrift.html?id=${recipe.id}`; // Her linker vi til opskriften
-      //HUSK at indsætte link til opskrift siden her!
       //TODO: Vis antal portioner, når du vil bruge det
       //TODO: Tilføj beskrivelsen når du har lavet excerpt eller ACF-beskrivelse
 
@@ -94,13 +99,18 @@ function getRecipesByFilters() {
   let url = `${baseUrl}&opskriftsamling=64`;
 
   // Objekt til at samle ID’er for hver type (fx sværhedsgrad, udstyr osv.)
+  //En tom kurv fordi der ikke er valgt filter endnu
   const filterValues = {};
 
+  // Data-type er ikke en standard, men det er data derimod. Vi har valgt att type er navnet på vores datasæt inde i html, derfor hedder vores: dataset.type, for så hentes den type taxonomi der høre under data-type. F.eks. sværhedsgrad eller stavblender
   filters.forEach(filter => {
     const type = filter.dataset.type;
+    //Her fanges værdien på taxonomien. F.eks. er value = 7 alle retter som tager mellem 30-60 min at lave
     const value = filter.value;
 
+    //Hvis ikke der er nogen opskrifter s´med de værdier vi vælger i filter, så oprettes der en tom liste
     if (!filterValues[type]) {
+      //Er derimod nogle opskifter som passer til de værdier som vi vælger, så lægger vi dem i kurven (vi forestiller os en indkøbskurv, og når den er fyldt kan vi gå til kassen = få opskrifterne som passer til de valgte værdier vist vist) og de vises
       filterValues[type] = [];
     }
     filterValues[type].push(value);
@@ -108,7 +118,7 @@ function getRecipesByFilters() {
 
   // Tilføj ID’er til URL’en – én gang for hver type (f.eks. &svaerhedsgrad=99,100)
   for (const type in filterValues) {
-    url += `&${type}=${filterValues[type].join(",")}`;
+    url += `&${type}=${filterValues[type].join("&")}`; //HVAD FOREGÅR DER - og eller ,???
   }
 
   // Fetch de filtrerede opskrifter

@@ -1,149 +1,502 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Spring Collection | Culinary Cloud</title>
-    <meta name="description" content="An inspiring spring collection of recipes - colorful, fresh and perfect for lighter, brighter days.">
-    <meta name="keywords" content="spring recipes, seasonal cooking, fresh ingredients, colorful dishes, culinary inspiration">
+    <meta
+      name="description"
+      content="An inspiring spring collection of recipes - colorful, fresh and perfect for lighter, brighter days."
+    />
+    <meta
+      name="keywords"
+      content="spring recipes, seasonal cooking, fresh ingredients, colorful dishes, culinary inspiration"
+    />
     <link rel="stylesheet" href="./assets/css/style.css" />
     <script src="./assets/js/SaesonSamlingApp.js" defer></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
 
-<body>
+  <body>
     <header>
-    <nav>
-    <div class="navbarLogo">
-        <a href="./Index.html">
-            <img src="./assets/img/image.svg" alt="Logo">
-        </a>
-    </div>
-    
-    <ul>
-        <li>
+      <nav>
+        <div class="navbarLogo">
+          <a href="./Index.html">
+            <img src="./assets/img/image.svg" alt="Logo" />
+          </a>
+        </div>
+
+        <ul>
+          <li>
             <a href="./Index.html">Home</a>
             <a class="active" href="./alleOpskrifter.html">All Recipes</a>
             <a href="./SaesonSamling.html">Spring Collection</a>
             <a href="./FamilieSamling.html">Cooking With Kids Collection</a>
-        </li>
-    </ul>
-    
-    <div class="søgefelt">
-        <input type="text" placeholder="Search...">
-    </div>
-    
-    <div class="login">
-        <a href="#"><i class="fa-regular fa-user">Login</i></a>
-    
-    </div>
-    
-    
-    
-    </nav>
-        <div class="hero">
-            <h1 class="heroTitle">CulinaryCloud</h1>
+          </li>
+        </ul>
+
+        <div class="søgefelt">
+          <input type="text" placeholder="Search..." />
         </div>
+
+        <div class="login">
+          <a href="#"><i class="fa-regular fa-user">Login</i></a>
+        </div>
+      </nav>
+      <div class="hero">
+        <h1 class="heroTitle">CulinaryCloud</h1>
+      </div>
     </header>
     <main>
-        <h1 class="collectionsTitle">Spring Collection</h1>
-        <p>Welcome the season of new beginnings with our Spring recipe collection. These fresh and colorful dishes are perfect for
-        lighter, brighter days - whether you're planning a picnic in the park, a cozy brunch at home, or a vibrant dinner with
-        friends. With ingredients that highlight the best of the season, you'll find inspiration to celebrate spring in every
-        bite.</p>
-    <div class="allRecipes"> 
-            <div class="filterBox">
-                <h3>Filtrér</h3>
-            
-                <h4>Sværhedsgrad</h4>
-                <label><input type="checkbox" class="filter" data-type="svaerhedsgrad" value="47"> Let</label>
-                <label><input type="checkbox" class="filter" data-type="svaerhedsgrad" value="48"> Øvet</label>
-                <label><input type="checkbox" class="filter" data-type="svaerhedsgrad" value="49"> Ekspert</label>
-            
-                <h4>Tilberedningstid</h4>
-                <label><input type="checkbox" class="filter" data-type="tilberedningstid" value="5"> Under 15 min</label>
-                <label><input type="checkbox" class="filter" data-type="tilberedningstid" value="6"> 15–30 min</label>
-                <label><input type="checkbox" class="filter" data-type="tilberedningstid" value="7"> 30–60 min</label>
-                <label><input type="checkbox" class="filter" data-type="tilberedningstid" value="11"> Over 1 time</label>
-            
-                <h4>Udstyr</h4>
-                <label><input type="checkbox" class="filter" data-type="udstyr" value="50"> Airfryer</label>
-                <label><input type="checkbox" class="filter" data-type="udstyr" value="51"> Ovn</label>
-                <label><input type="checkbox" class="filter" data-type="udstyr" value="54"> Foodprocessor</label>
-                <label><input type="checkbox" class="filter" data-type="udstyr" value="52"> Mikrobøljeovn</label>
-                <label><input type="checkbox" class="filter" data-type="udstyr" value="53"> Røremaskine</label>
-                <label><input type="checkbox" class="filter" data-type="udstyr" value="55"> Stavblender</label>
-                
-            
-                <h4>Rettype</h4>
-                <label><input type="checkbox" class="filter" data-type="rettype" value="30"> Aftensmad</label>
-                <label><input type="checkbox" class="filter" data-type="rettype" value="34"> Dessert</label>
-                <label><input type="checkbox" class="filter" data-type="rettype" value="56"> Bagværk</label>
-                <label><input type="checkbox" class="filter" data-type="rettype" value="32"> Forret</label>
-                <label><input type="checkbox" class="filter" data-type="rettype" value="29"> Frokost</label>
-                <label><input type="checkbox" class="filter" data-type="rettype" value="33"> Hovedret</label>
-                <label><input type="checkbox" class="filter" data-type="rettype" value="57"> Kage</label>
-                <label><input type="checkbox" class="filter" data-type="rettype" value="46"> Madpakke-mad</label>
-                <label><input type="checkbox" class="filter" data-type="rettype" value="28"> Morgenmad</label>
-                <label><input type="checkbox" class="filter" data-type="rettype" value="31"> Snacks & mellemmåltider</label>
+      <h1 class="collectionsTitle">Spring Collection</h1>
+      <p>
+        Welcome the season of new beginnings with our Spring recipe collection.
+        These fresh and colorful dishes are perfect for lighter, brighter days -
+        whether you're planning a picnic in the park, a cozy brunch at home, or
+        a vibrant dinner with friends. With ingredients that highlight the best
+        of the season, you'll find inspiration to celebrate spring in every
+        bite.
+      </p>
+      <div class="allRecipes">
+        <div class="filterBox">
+          <h3>Filtrér</h3>
 
-                <h4>Sæson og højtider</h4>
-                <label><input type="checkbox" class="filter" data-type="rettype" value="45"> Efterår</label>
-                <label><input type="checkbox" class="filter" data-type="rettype" value="41"> Eid</label>
-                <label><input type="checkbox" class="filter" data-type="rettype" value="38"> Fastelavn</label>
-                <label><input type="checkbox" class="filter" data-type="rettype" value="58"> Forår</label>
-                <label><input type="checkbox" class="filter" data-type="rettype" value="37"> Halloween</label>
-                <label><input type="checkbox" class="filter" data-type="rettype" value="35"> Jul</label>
-                <label><input type="checkbox" class="filter" data-type="rettype" value="42"> Nytår</label>
-                <label><input type="checkbox" class="filter" data-type="rettype" value="36"> Påske</label>
-                <label><input type="checkbox" class="filter" data-type="rettype" value="40"> Ramadan</label>
-                <label><input type="checkbox" class="filter" data-type="rettype" value="44"> Sommer</label>
-                <label><input type="checkbox" class="filter" data-type="rettype" value="43"> Valentine</label>
-                <label><input type="checkbox" class="filter" data-type="rettype" value="59"> Vinter</label>
+          <h4>Sværhedsgrad</h4>
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="svaerhedsgrad"
+              value="47"
+            />
+            Let</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="svaerhedsgrad"
+              value="48"
+            />
+            Øvet</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="svaerhedsgrad"
+              value="49"
+            />
+            Ekspert</label
+          >
 
-                <h4>Diæt & allergi</h4>
-                <label><input type="checkbox" class="filter" data-type="rettype" value="24"> Glutenfri</label>
-                <label><input type="checkbox" class="filter" data-type="rettype" value="27"> Højt protienindhold</label>
-                <label><input type="checkbox" class="filter" data-type="rettype" value="26"> Kalorielet</label>
-                <label><input type="checkbox" class="filter" data-type="rettype" value="23"> Laktosefri</label>
-                <label><input type="checkbox" class="filter" data-type="rettype" value="22"> Pescetar</label>
-                <label><input type="checkbox" class="filter" data-type="rettype" value="25"> Sukkerfri</label>
-                <label><input type="checkbox" class="filter" data-type="rettype" value="21"> Vegansk</label>
-                <label><input type="checkbox" class="filter" data-type="rettype" value="20"> Vegetarisk</label>
-    
-            </div>
+          <h4>Tilberedningstid</h4>
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="tilberedningstid"
+              value="5"
+            />
+            Under 15 min</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="tilberedningstid"
+              value="6"
+            />
+            15–30 min</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="tilberedningstid"
+              value="7"
+            />
+            30–60 min</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="tilberedningstid"
+              value="11"
+            />
+            Over 1 time</label
+          >
 
-        <div class="recipeCards"> Her skal opskrifterne vise sig</div>
-    </div>
-    <div class="recipeModal hidden">
-        <div class="modalIndhold">
-            <span class="lukModal">&times;</span>
-            <img id="modalBillede" src="" alt="" />
-            <h3 id="modalTitel"></h3>
-            <p id="modalBeskrivelse"></p>
-            <!-- Beskrivelsen er ikke oprettet i wordpress - i tvivl om hvordan vi lige gør det smartest-->
-            <a id="modalLink" href="#" target="_blank" class="recipeButton">Se hele opskriften</a>
-            <p><strong>Tilberedningstid:</strong> <span id="modalTid"></span></p>
-            <p><strong>Sværhedsgrad:</strong> <span id="modalSværhedsgrad"></span></p>
-            <!-- <p><strong>Antal portioner:</strong> <span id="modalPortioner"></span></p> -->
-    
+          <h4>Udstyr</h4>
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="udstyr"
+              value="50"
+            />
+            Airfryer</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="udstyr"
+              value="51"
+            />
+            Ovn</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="udstyr"
+              value="54"
+            />
+            Foodprocessor</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="udstyr"
+              value="52"
+            />
+            Mikrobøljeovn</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="udstyr"
+              value="53"
+            />
+            Røremaskine</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="udstyr"
+              value="55"
+            />
+            Stavblender</label
+          >
+
+          <h4>Rettype</h4>
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="rettype"
+              value="30"
+            />
+            Aftensmad</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="rettype"
+              value="34"
+            />
+            Dessert</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="rettype"
+              value="56"
+            />
+            Bagværk</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="rettype"
+              value="32"
+            />
+            Forret</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="rettype"
+              value="29"
+            />
+            Frokost</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="rettype"
+              value="33"
+            />
+            Hovedret</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="rettype"
+              value="57"
+            />
+            Kage</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="rettype"
+              value="46"
+            />
+            Madpakke-mad</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="rettype"
+              value="28"
+            />
+            Morgenmad</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="rettype"
+              value="31"
+            />
+            Snacks & mellemmåltider</label
+          >
+
+          <h4>Sæson og højtider</h4>
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="rettype"
+              value="45"
+            />
+            Efterår</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="rettype"
+              value="41"
+            />
+            Eid</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="rettype"
+              value="38"
+            />
+            Fastelavn</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="rettype"
+              value="58"
+            />
+            Forår</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="rettype"
+              value="37"
+            />
+            Halloween</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="rettype"
+              value="35"
+            />
+            Jul</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="rettype"
+              value="42"
+            />
+            Nytår</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="rettype"
+              value="36"
+            />
+            Påske</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="rettype"
+              value="40"
+            />
+            Ramadan</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="rettype"
+              value="44"
+            />
+            Sommer</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="rettype"
+              value="43"
+            />
+            Valentine</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="rettype"
+              value="59"
+            />
+            Vinter</label
+          >
+
+          <h4>Diæt & allergi</h4>
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="rettype"
+              value="24"
+            />
+            Glutenfri</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="rettype"
+              value="27"
+            />
+            Højt protienindhold</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="rettype"
+              value="26"
+            />
+            Kalorielet</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="rettype"
+              value="23"
+            />
+            Laktosefri</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="rettype"
+              value="22"
+            />
+            Pescetar</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="rettype"
+              value="25"
+            />
+            Sukkerfri</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="rettype"
+              value="21"
+            />
+            Vegansk</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="rettype"
+              value="20"
+            />
+            Vegetarisk</label
+          >
         </div>
-    </div>
 
+        <div class="recipeCards">Her skal opskrifterne vise sig</div>
+      </div>
+      <div class="recipeModal hidden">
+        <div class="modalIndhold">
+          <!-- Krydset lavet af: &times;, kommer fra w3 schools -->
+          <span class="lukModal">&times;</span>
+          <img id="modalBillede" src="" alt="" />
+          <h3 id="modalTitel"></h3>
+          <p id="modalBeskrivelse"></p>
+          <!-- Beskrivelsen er ikke oprettet i wordpress - i tvivl om hvordan vi lige gør det smartest-->
+          <a id="modalLink" href="#" target="_blank" class="recipeButton"
+            >Se hele opskriften</a
+          >
+          <p><strong>Tilberedningstid:</strong> <span id="modalTid"></span></p>
+          <p>
+            <strong>Sværhedsgrad:</strong> <span id="modalSværhedsgrad"></span>
+          </p>
+          <!-- <p><strong>Antal portioner:</strong> <span id="modalPortioner"></span></p> -->
+        </div>
+      </div>
     </main>
-<footer>
-    <ul>
+    <footer>
+      <ul>
         <li>
-            <a href="#">Privacy policy</a>
-            <a href="#">Copyright</a>
-            <a href="#">Contact</a>
-            <a href="#">Cookies</a>
+          <a href="#">Privacy policy</a>
+          <a href="#">Copyright</a>
+          <a href="#">Contact</a>
+          <a href="#">Cookies</a>
         </li>
-    </ul>
-</footer>
-</body>
-
+      </ul>
+    </footer>
+  </body>
 </html>

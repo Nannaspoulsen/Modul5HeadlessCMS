@@ -1,141 +1,482 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>All Recipes | CulinaryCloud</title>
-    <meta name="description"
-        content="Your online cookbook for all things delicious. Explore a wide variety of recipes, from quick weeknight dinners to elaborate weekend feasts.">
-    <meta name="keywords"
-        content="recipes, cooking, culinary, online cookbook, delicious meals, food inspiration">
+    <meta
+      name="description"
+      content="Your online cookbook for all things delicious. Explore a wide variety of recipes, from quick weeknight dinners to elaborate weekend feasts."
+    />
+    <meta
+      name="keywords"
+      content="recipes, cooking, culinary, online cookbook, delicious meals, food inspiration"
+    />
     <link rel="stylesheet" href="./assets/css/style.css" />
     <script src="./assets/js/app.js" defer></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
 
-<body>
-<header>
-    <nav>
-    <div class="navbarLogo">
-        <a href="./Index.html">
-            <img src="./assets/img/image.svg" alt="Logo">
-        </a>
-    </div>
-    
-    <ul>
-        <li>
+  <body>
+    <header>
+      <nav>
+        <div class="navbarLogo">
+          <a href="./Index.html">
+            <img src="./assets/img/image.svg" alt="Logo" />
+          </a>
+        </div>
+
+        <ul>
+          <li>
             <a href="./Index.html">Home</a>
             <a class="active" href="./alleOpskrifter.html">All Recipes</a>
             <a href="./SaesonSamling.html">Spring Collection</a>
             <a href="./FamilieSamling.html">Cooking With Kids Collection</a>
-        </li>
-    </ul>
-    
-    <div class="søgefelt">
-        <input type="text" placeholder="Search...">
-    </div>
-    
-    <div class="login">
-        <a href="#"><i class="fa-regular fa-user">Login</i></a>
-    
-    </div>
-    
-    
-    
-    </nav>
-    <div class="hero">
+          </li>
+        </ul>
+
+        <div class="søgefelt">
+          <input type="text" placeholder="Search..." />
+        </div>
+
+        <div class="login">
+          <a href="#"><i class="fa-regular fa-user">Login</i></a>
+        </div>
+      </nav>
+      <div class="hero">
         <h1 class="heroTitle">CulinaryCloud</h1>
-    </div>
-</header>
+      </div>
+    </header>
 
-<main>
-    <h2 class="allRecipesIntro">All recipes</h2>
-    <div class="allRecipesSearch">
+    <main>
+      <h2 class="allRecipesIntro">All recipes</h2>
+      <div class="allRecipesSearch">
         <input type="text" placeholder="Search..." />
-    </div>
+      </div>
 
-<div class="allRecipes">
-    <div class="filterBox">
-        <h3>Sort recipes</h3>
+      <div class="allRecipes">
+        <div class="filterBox">
+          <h3>Sort recipes</h3>
 
-        <h4>Difficulty</h4>
-        <label><input type="checkbox" class="filter" data-type="svaerhedsgrad" value="47"> Easy</label>
-        <label><input type="checkbox" class="filter" data-type="svaerhedsgrad" value="48"> Intermediate</label>
-        <label><input type="checkbox" class="filter" data-type="svaerhedsgrad" value="49"> Ekspert</label>
+          <h4>Difficulty</h4>
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="svaerhedsgrad"
+              value="47"
+            />
+            Easy</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="svaerhedsgrad"
+              value="48"
+            />
+            Intermediate</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="svaerhedsgrad"
+              value="49"
+            />
+            Ekspert</label
+          >
 
-        <h4>Total time</h4>
-        <label><input type="checkbox" class="filter" data-type="tilberedningstid" value="5"> Under 15 minutes</label>
-        <label><input type="checkbox" class="filter" data-type="tilberedningstid" value="6"> 15–30 minutes</label>
-        <label><input type="checkbox" class="filter" data-type="tilberedningstid" value="7"> 30–60 minutes</label>
-        <label><input type="checkbox" class="filter" data-type="tilberedningstid" value="11"> Over 1 hour</label>
+          <h4>Total time</h4>
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="tilberedningstid"
+              value="5"
+            />
+            Under 15 minutes</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="tilberedningstid"
+              value="6"
+            />
+            15–30 minutes</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="tilberedningstid"
+              value="7"
+            />
+            30–60 minutes</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="tilberedningstid"
+              value="11"
+            />
+            Over 1 hour</label
+          >
 
-        <h4>Equipment</h4>
-        <label><input type="checkbox" class="filter" data-type="udstyr" value="50"> Airfryer</label>
-        <label><input type="checkbox" class="filter" data-type="udstyr" value="51"> Oven</label>
-        <label><input type="checkbox" class="filter" data-type="udstyr" value="54"> Foodprocessor</label>
-        <label><input type="checkbox" class="filter" data-type="udstyr" value="52"> Microwave</label>
-        <label><input type="checkbox" class="filter" data-type="udstyr" value="53"> Stand mixer</label>
-        <label><input type="checkbox" class="filter" data-type="udstyr" value="55"> Immersion blender</label>
+          <h4>Equipment</h4>
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="udstyr"
+              value="50"
+            />
+            Airfryer</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="udstyr"
+              value="51"
+            />
+            Oven</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="udstyr"
+              value="54"
+            />
+            Foodprocessor</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="udstyr"
+              value="52"
+            />
+            Microwave</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="udstyr"
+              value="53"
+            />
+            Stand mixer</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="udstyr"
+              value="55"
+            />
+            Immersion blender</label
+          >
 
+          <h4>Course type</h4>
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="rettype"
+              value="30"
+            />
+            Dinner</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="rettype"
+              value="34"
+            />
+            Dessert</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="rettype"
+              value="56"
+            />
+            Pastry</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="rettype"
+              value="32"
+            />
+            Starter</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="rettype"
+              value="29"
+            />
+            Lunch</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="rettype"
+              value="33"
+            />
+            Main course</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="rettype"
+              value="57"
+            />
+            Cake</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="rettype"
+              value="46"
+            />
+            Lunchbox-food</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="rettype"
+              value="28"
+            />
+            Breakfast</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="rettype"
+              value="31"
+            />
+            Snacks and between meals</label
+          >
 
-        <h4>Course type</h4>
-        <label><input type="checkbox" class="filter" data-type="rettype" value="30"> Dinner</label>
-        <label><input type="checkbox" class="filter" data-type="rettype" value="34"> Dessert</label>
-        <label><input type="checkbox" class="filter" data-type="rettype" value="56"> Pastry</label>
-        <label><input type="checkbox" class="filter" data-type="rettype" value="32"> Starter</label>
-        <label><input type="checkbox" class="filter" data-type="rettype" value="29"> Lunch</label>
-        <label><input type="checkbox" class="filter" data-type="rettype" value="33"> Main course</label>
-        <label><input type="checkbox" class="filter" data-type="rettype" value="57"> Cake</label>
-        <label><input type="checkbox" class="filter" data-type="rettype" value="46"> Lunchbox-food</label>
-        <label><input type="checkbox" class="filter" data-type="rettype" value="28"> Breakfast</label>
-        <label><input type="checkbox" class="filter" data-type="rettype" value="31"> Snacks and between meals</label>
+          <h4>Season and festivity</h4>
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="rettype"
+              value="45"
+            />
+            Fall</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="rettype"
+              value="41"
+            />
+            Eid</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="rettype"
+              value="38"
+            />
+            Medi gras</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="rettype"
+              value="58"
+            />
+            Spring</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="rettype"
+              value="37"
+            />
+            Halloween</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="rettype"
+              value="35"
+            />
+            Christmas</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="rettype"
+              value="42"
+            />
+            New years</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="rettype"
+              value="36"
+            />
+            Easter</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="rettype"
+              value="40"
+            />
+            Ramadan</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="rettype"
+              value="44"
+            />
+            Summer</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="rettype"
+              value="43"
+            />
+            Valentine</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="rettype"
+              value="59"
+            />
+            Winter</label
+          >
 
-        <h4>Season and festivity</h4>
-        <label><input type="checkbox" class="filter" data-type="rettype" value="45"> Fall</label>
-        <label><input type="checkbox" class="filter" data-type="rettype" value="41"> Eid</label>
-        <label><input type="checkbox" class="filter" data-type="rettype" value="38"> Medi gras</label>
-        <label><input type="checkbox" class="filter" data-type="rettype" value="58"> Spring</label>
-        <label><input type="checkbox" class="filter" data-type="rettype" value="37"> Halloween</label>
-        <label><input type="checkbox" class="filter" data-type="rettype" value="35"> Christmas</label>
-        <label><input type="checkbox" class="filter" data-type="rettype" value="42"> New years</label>
-        <label><input type="checkbox" class="filter" data-type="rettype" value="36"> Easter</label>
-        <label><input type="checkbox" class="filter" data-type="rettype" value="40"> Ramadan</label>
-        <label><input type="checkbox" class="filter" data-type="rettype" value="44"> Summer</label>
-        <label><input type="checkbox" class="filter" data-type="rettype" value="43"> Valentine</label>
-        <label><input type="checkbox" class="filter" data-type="rettype" value="59"> Winter</label>
+          <h4>Diet and allergy</h4>
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="rettype"
+              value="24"
+            />
+            Gluten free</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="rettype"
+              value="27"
+            />
+            High in protien</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="rettype"
+              value="26"
+            />
+            Low in calories</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="rettype"
+              value="23"
+            />
+            Lactose free</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="rettype"
+              value="22"
+            />
+            Pescetarian</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="rettype"
+              value="25"
+            />
+            Sugar free</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="rettype"
+              value="21"
+            />
+            Veganic</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter"
+              data-type="rettype"
+              value="20"
+            />
+            Vegetarian</label
+          >
+        </div>
 
-        <h4>Diet and allergy</h4>
-        <label><input type="checkbox" class="filter" data-type="rettype" value="24"> Gluten free</label>
-        <label><input type="checkbox" class="filter" data-type="rettype" value="27"> High in protien</label>
-        <label><input type="checkbox" class="filter" data-type="rettype" value="26"> Low in calories</label>
-        <label><input type="checkbox" class="filter" data-type="rettype" value="23"> Lactose free</label>
-        <label><input type="checkbox" class="filter" data-type="rettype" value="22"> Pescetarian</label>
-        <label><input type="checkbox" class="filter" data-type="rettype" value="25"> Sugar free</label>
-        <label><input type="checkbox" class="filter" data-type="rettype" value="21"> Veganic</label>
-        <label><input type="checkbox" class="filter" data-type="rettype" value="20"> Vegetarian</label>
+        <div class="recipeCards">Her skal opskrifterne vise sig</div>
+      </div>
+    </main>
 
-    </div>
-
-    <div class="recipeCards"> Her skal opskrifterne vise sig</div>
-</div>
-    
-
-
-</main>
-
-<footer>
-    <ul>
+    <footer>
+      <ul>
         <li>
-            <a href="#">Privacy policy</a>
-            <a href="#">Copyright</a>
-            <a href="#">Contact</a>
-            <a href="#">Cookies</a>
+          <a href="#">Privacy policy</a>
+          <a href="#">Copyright</a>
+          <a href="#">Contact</a>
+          <a href="#">Cookies</a>
         </li>
-    </ul>
-  </footer>
-</body>
-
+      </ul>
+    </footer>
+  </body>
 </html>
