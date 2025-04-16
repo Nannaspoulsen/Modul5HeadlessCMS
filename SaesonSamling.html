@@ -469,24 +469,33 @@
 
         <div class="recipeCards">Her skal opskrifterne vise sig</div>
       </div>
-      <div class="recipeModal hidden">
-        <div class="modalIndhold">
-          <!-- Krydset lavet af: &times;, kommer fra w3 schools -->
-          <span class="lukModal">&times;</span>
-          <img id="modalBillede" src="" alt="" />
-          <h3 id="modalTitel"></h3>
-          <p id="modalBeskrivelse"></p>
-          <!-- Beskrivelsen er ikke oprettet i wordpress - i tvivl om hvordan vi lige gør det smartest-->
-          <a id="modalLink" href="#" target="_blank" class="recipeButton"
-            >Se hele opskriften</a
-          >
-          <p><strong>Tilberedningstid:</strong> <span id="modalTid"></span></p>
-          <p>
-            <strong>Sværhedsgrad:</strong> <span id="modalSværhedsgrad"></span>
-          </p>
-          <!-- <p><strong>Antal portioner:</strong> <span id="modalPortioner"></span></p> -->
-        </div>
+
+  <div class="recipeModal hidden">
+    <div class="modalIndhold">
+      <span class="lukModal">&times;</span>
+  
+      <img id="modalBillede" src="" alt="" />
+  
+      <h3 id="modalTitel"></h3>
+      <p id="modalBeskrivelse"></p>
+  
+      <div class="modalInfo">
+        <span><img src="./assets/img/utensils-solid.svg" alt="Servings" /> <span id="modalPortioner"></span></span>
+        <span><img src="./assets/img/clock-solid.svg" alt="Time" /> <span id="modalTid"></span></span>
+        <span><img src="./assets/img/kitchen-set-solid.svg" alt="Difficulty" /> <span id="modalSværhedsgrad"></span></span>
       </div>
+  
+      <div class="saveRecipe" title="Save this recipe">
+        <img src="./assets/img/heart-solid.svg" alt="Save recipe" style="width: 20px; height: 20px;" />
+      </div>
+  
+      <a id="modalLink" href="#" target="_blank" class="recipeButton">
+        View full recipe
+      </a>
+    </div>
+  </div>
+
+
     </main>
     <footer>
       <ul>

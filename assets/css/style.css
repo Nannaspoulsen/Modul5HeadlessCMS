@@ -503,28 +503,96 @@ footer li {
 
 .modalIndhold {
   background: var(--BackgroundWhite);
-  padding: 2rem;
-  border-radius: 10px;
+  padding: var(--smSpacer);
+  border-radius: 5px;
   width: 90%;
-  max-width: 500px;
+  max-width: 600px;
   position: relative;
+  text-align: left;
 }
 
 .modalIndhold img {
-  width: 100%;
-  height: auto;
-  margin-bottom: var(--smSpacer);
-  border-radius: 8px;
+  display: block;
+  width: 90%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
 .lukModal {
-  position: absolute;
-  top: 0.1rem;
-  right: 0.6rem;
-  font-size: 2rem;
-  cursor: pointer;
-  color: black;
+    position: absolute;
+      top: 0.1rem;
+      right: 0.6rem;
+      font-size: 2rem;
+      cursor: pointer;
+      color: black;
 }
+
+#modalTitel {
+  font-family: "Oooh Baby", sans-serif;
+  font-size: var(--font-size-xlarge);
+}
+
+#modalBeskrivelse {
+  font-family: var(EB Garamond), serif;
+  font-size: var(--font-size-normal);
+  margin-right: var(--lgSpacer);
+}
+
+.recipeButton {
+  background-color: var(--ButtonColor);
+  color: black;
+  font-size: 1rem;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin-bottom: 1rem;
+}
+
+.modalInfo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 1rem;
+  margin-top: 1rem;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.modalInfo span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+}
+
+.modalInfo img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.saveRecipe {
+  margin-top: 1rem;
+  text-align: right;
+}
+
+.saveRecipe img {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.saveRecipe img:hover {
+  transform: scale(1.2);
+}
+
+
+
+
 
 .recipeButton {
   display: inline-block;
