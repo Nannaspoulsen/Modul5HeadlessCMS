@@ -20,11 +20,21 @@ if (!recipeId) {
       document.querySelector(".recipeImg").src = recipe.acf?.billede?.url || "";
       document.querySelector(".recipeImg").alt = recipe.title.rendered;
 
+
+      // Hent og vis beskrivelse af opskrift 
+      // const beskrivelse = recipe.excerpt?.rendered || "<p>Description missing.</p>";
+      // document.querySelector(".recipeText").innerHTML = `
+      // <p>${beskrivelse}</p>`;
+
+      const beskrivelse = recipe.acf?.infotekst || "<p>Description missing.</p>";
+document.querySelector(".recipeText").innerHTML = `
+  <p>${beskrivelse}</p>`;
+  
       // Hent fremgangsmåde fra ACF-gruppefelt
       const fremgangsmaade =
         recipe.acf?.fremgangsmaade?.fremgangsmaade || "Instructions missing";
 
-      // Hent ingredienser: det er en gruppe med flere felter (1_ingredienser, 2_ingredienser, osv.)
+      // Hent ingredienser: det er en gruppe med flere felter 
       const ingrediensObjekt = recipe.acf?.ingredienser || {};
       const ingrediensListe = Object.values(ingrediensObjekt)
         .filter((item) => item) // Fjern tomme felter
@@ -36,10 +46,9 @@ if (!recipeId) {
         .filter((item) => item) // Fjern tomme felter
         .map((item) => `<li>${item}</li>`)
         .join("");
-    
 
       // Vis ingredienser
-      document.querySelector(".ingredients").innerHTML = `
+      document.querySelector(".ingrediens").innerHTML = `
         <h2> Ingrediens </h2>
         <ul>${ingrediensListe}</ul>
       `;

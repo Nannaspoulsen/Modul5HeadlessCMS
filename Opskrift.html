@@ -6,50 +6,77 @@
     <title>Opskrift</title>
     <link rel="stylesheet" href="./assets/css/style.css" />
     <script src="./assets/js/opskrift.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
 
   <body>
     <header>
-      <div class="navbar">
+      <nav>
         <div class="navbarLogo">
-          <a href="./index.html">
-            <img src="" alt="Logo" />
+          <a href="./Index.html">
+            <img src="./assets/img/image.svg" alt="Logo" />
           </a>
         </div>
-        <ul class="navbarLinks">
-          <li><a href="./Index.html">Home</a></li>
-          <li><a href="./AlleOpskrifter.html">All Recipes</a></li>
-          <li><a href="./SaesonSamling.html">Spring Collection</a></li>
+
+        <ul>
           <li>
+            <a href="./Index.html">Home</a>
+            <a class="active" href="./alleOpskrifter.html">All Recipes</a>
+            <a href="./SaesonSamling.html">Spring Collection</a>
             <a href="./FamilieSamling.html">Cooking With Kids Collection</a>
           </li>
         </ul>
+
         <div class="søgefelt">
           <input type="text" placeholder="Search..." />
         </div>
+
         <div class="login">
-          <a href="">Login</a>
+          <a href="#"
+            ><i class="fa-regular fa-user"></i>
+            <span>Login</span>
+          </a>
         </div>
-      </div>
+      </nav>
       <div class="hero">
         <h1 class="heroTitle">CulinaryCloud</h1>
       </div>
     </header>
 
     <main>
-    <div class="icons">
-        
-    </div>
       <div class="fullRecipe">
         <h1 class="recipeTitel"></h1>
         <p class="recipeText"></p>
         <img class="recipeImg" src="" alt="" />
         <div class="recipeBox">
-          <p class="ingredients"></p>
-          <div class="hr">
-             <hr></hr>
+          <div class="icons">
+            <div class="save">
+              <i class="fa-solid fa-heart"></i>
+              <span class="iconP">Save this</span>
+            </div>
+            <div class="servings">
+              <i class="fa-solid fa-utensils"></i>
+              <span class="iconP">Save this</span>
+            </div>
+            <div class="clock">
+              <i class="fa-solid fa-clock"></i>
+              <span class="iconP">Save this</span>
+            </div>
+            <div class="kitchenSet">
+              <i class="fa-solid fa-kitchen-set"></i>
+              <span class="iconP">Save this</span>
+            </div>
           </div>
-          <p class="instructions"></p>
+          <section class="doings">
+            <p class="ingrediens"></p>
+            <p class="instructions"></p>
+          </section>
         </div>
       </div>
     </main>

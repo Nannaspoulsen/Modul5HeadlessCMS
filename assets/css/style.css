@@ -90,29 +90,30 @@ nav {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.549);
+  background-color: rgba(254, 245, 255, 0.359);
   backdrop-filter: blur(2px);
 }
 
 .navbarLogo img {
-  height: 60px;
-  width: 60px;
+  height: 80px;
+  width: 80px;
 }
 
 nav ul {
   list-style-type: none;
 }
 
-nav li a {
+nav a {
   text-decoration: none;
   justify-content: space-between;
   padding: var(--stdSpacer);
   color: black;
   transition: color 0.3s ease, border-bottom 0.3s ease;
+  font-size: 1.5rem;
 }
 
 nav li a:hover {
-  color: white;
+  color: var(--SweetPurple);
   border-bottom: 2px solid var(--SweetPurple);
 }
 
@@ -123,12 +124,27 @@ nav a.active {
 .søgefelt input {
   font-family: "EB Garamond", serif;
   padding: 0.2rem 1rem;
-  font-size: 1rem;
+  font-size: 1.3rem;
   border: 1px solid #520069a4;
   border-radius: 100px;
-  width: 170px;
+  width: 220px;
 }
 
+.login {
+  height: 80px;
+  width: 80px;
+}
+
+.login a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+}
+
+.login i {
+  font-size: 45px;
+}
 /* Main */
 
 .intro {
@@ -569,6 +585,7 @@ footer li {
 footer {
   background-color: var(--PalePink);
   padding: var(--lgSpacer);
+
 }
 
 footer ul {
@@ -579,7 +596,11 @@ footer li {
   display: inline;
   display: flex;
   justify-content: center;
-  justify-content: space-between;
+  justify-content: space-around;
+}
+
+footer a {
+  color: black;
 }
 
 /**********
@@ -590,27 +611,41 @@ footer li {
 img {
   float: right;
   margin: 20px;
+  height: auto;
 }
 
 .recipeBox {
   clear: both;
   background-color: coral;
-  display: grid;
-  grid-template-columns: 1fr 5px 2fr;
   margin: 20px;
   gap: 20px;
+  max-width: 1000px;
 }
 
-.ingredients,
-.instructions {
+.instructions .ingrediens {
   padding: 40px;
 }
 
-/* hr {
+.icons{
   display: flex;
-  margin: 4px;
-  padding: 2px;
-  background: black;
-  border-radius: 8px;
-  transform: rotate(90deg);
-  width: 300px;} */
+  justify-content: center;
+}
+
+.doings{
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.icons{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.iconP {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
+
