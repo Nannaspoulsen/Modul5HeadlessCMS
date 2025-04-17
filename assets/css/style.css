@@ -140,10 +140,12 @@ nav a.active {
   flex-direction: column;
   align-items: center;
   padding: 0px;
+  font-family: var(EB Garamond), serif;
 }
 
 .login i {
-  font-size: 45px;
+  font-size: 25px;
+  
 }
 /* Main */
 
@@ -491,7 +493,7 @@ footer li {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.559);
+  background-color: rgba(0, 0, 0, 0.629);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -516,7 +518,6 @@ footer li {
   width: 90%;
   height: 250px;
   object-fit: cover;
-  border-radius: 10px;
 }
 
 .lukModal {
@@ -552,46 +553,23 @@ footer li {
 }
 
 .modalInfo {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  font-size: 1rem;
-  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
-  justify-content: flex-start;
+  margin-left: var(--stdSpacer);
 }
 
 .modalInfo span {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 1rem;
 }
 
 .modalInfo img {
   width: 20px;
   height: 20px;
   object-fit: contain;
+
 }
-
-.saveRecipe {
-  margin-top: 1rem;
-  text-align: right;
-}
-
-.saveRecipe img {
-  width: 20px;
-  height: 20px;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-.saveRecipe img:hover {
-  transform: scale(1.2);
-}
-
-
-
 
 
 .recipeButton {
