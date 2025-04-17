@@ -374,7 +374,6 @@ footer li {
   font-size: var(--font-size-xlarge);
   margin-top: var(--lgSpacer);
   margin-bottom: var(--smSpacer) 0;
-  /* Hvorfor pludselig padding og ikke margin?? */
   padding-left: var(--lgSpacer);
 }
 
@@ -424,6 +423,7 @@ footer li {
 
 .recipeCards {
   margin: var(--lgSpacer);
+  padding-top: var(--stdSpacer);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
@@ -438,16 +438,15 @@ footer li {
 
 .recipe img {
   display: block;
-  margin-bottom: 0.5rem;
-  max-width: 100%;
-  height: auto;
+  object-fit: cover;
+  width: 100%;
+  aspect-ratio: 4/3;
   border: 1px solid var(--SweetPurple);
 }
 
 /* Filterfelt */
 
 .filterBox {
-  background-color: var(--PalePink);
   padding: var(--lgSpacer);
   margin: var(--lgSpacer);
   border-radius: 5px;
@@ -455,13 +454,9 @@ footer li {
   width: 300px;
 }
 
-.filterBox h3 {
-  margin-bottom: 1rem;
-}
-
 .filterBox h4 {
-  margin-top: 1.5rem;
-  margin-bottom: 0.5rem;
+  font-size: var(--font-size-large);;
+  padding-top: var(--stdSpacer);
   color: var(--SweetPurple);
 }
 
@@ -477,21 +472,7 @@ footer li {
   transform: scale(1.2);
 }
 
-#applyFilters {
-  margin-top: 1.5rem;
-  padding: 0.75rem 1rem;
-  background-color: var(--PalePink);
-  border: none;
-  border-radius: 5px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  width: 100%;
-}
 
-#applyFilters:hover {
-  background-color: var(--SweetPurple);
-}
 
 /* Popup Modal */
 
