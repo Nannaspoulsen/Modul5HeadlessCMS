@@ -137,16 +137,16 @@ nav a.active {
 
 .login a {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  padding: 0px;
   font-family: var(EB Garamond), serif;
 }
 
-.login i {
-  font-size: 25px;
-  
+.login span {
+  font-size: 1.5rem;
+  margin-top: 3px;
+  margin-left: 10px;
 }
+
 /* Main */
 
 .intro {
