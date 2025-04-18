@@ -680,22 +680,45 @@ footer a {
 /**********/
 
 /* BOKS MED INGREDIENSER OG FREMGANGSMÅDE */
-img {
-  float: right;
-  margin: 20px;
-  height: auto;
+.titelDescription {
+  display: flex;   
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin: 5rem;
 }
 
+.textGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.recipeTitel {
+  margin: 0;
+  padding: 0;
+}
+
+.recipeText {
+  margin-top: 10px;
+  padding: 0;
+}
+
+img {
+  max-width: 0 auto;
+  height: auto;
+  margin: 0 20px;
+}
 .recipeBox {
   clear: both;
   background-color: coral;
-  margin: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
   gap: 20px;
-  max-width: 1000px;
+  max-width: auto;
 }
 
 .instructions .ingrediens {
-  padding: 40px;
+  margin: 40px;
 }
 
 .icons{
@@ -714,7 +737,7 @@ img {
   justify-content: space-around;
 }
 
-.iconP {
+.saveP .servingP .clockP .kitchenSetP {
   display: inline-block;
   vertical-align: middle;
 }

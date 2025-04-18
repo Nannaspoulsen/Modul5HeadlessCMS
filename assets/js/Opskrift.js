@@ -12,6 +12,24 @@ if (!recipeId) {
   // hvis der er et id, bygges der en url til rest api. I ``peges der på et bestemt blogindlæg med et bestemt id
   const url = `https://www.menneskevaerk.com/wp-json/wp/v2/posts/${recipeId}?acf_format=standard&_embed`;
 
+
+  
+  fetch(url)
+  .then(response => response.json())
+  .then(data => {
+    tid = data.tid;
+    sværhedsgrad = data.sværhedsgrad;
+    portioner = data.portioner;
+
+    // Tildel værdierne til DOM-elementer
+    document.querySelector(".servingP").textContent = tid;
+    document.querySelector(".clockP").textContent = sværhedsgrad;
+    document.querySelector(".kitchenSetP").textContent = portioner;
+  })
+  .catch(error => console.error("Fejl ved hentning af data: ", error));
+  
+  
+  
   // Hent data via fetch, og oversætter det til json
   fetch(url)
     .then((res) => res.json())
