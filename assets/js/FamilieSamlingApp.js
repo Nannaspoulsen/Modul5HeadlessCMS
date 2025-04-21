@@ -25,7 +25,7 @@ function displayRecipes(recipes) {
   // Hvis der ikke er en opskrift, så vises der en fejlmeddelelse
   if (recipes.length === 0) {
     container.innerHTML =
-      "<p style='text-align: center; padding: 2rem;'>Sorry, no recepies found. Try again .</p>";
+      "<p>Sorry, no recipes found. Try again.</p>";
     return;
   }
 
@@ -43,8 +43,8 @@ function displayRecipes(recipes) {
     // Når man bruger ?_embed i en fetch-URL til WordPress API, indsætter WordPress de tilhørende taxonomier under feltet "_embedded", i en nøgle kaldet "wp:term". Den URL vi bruger til at hente opskrifterne, indeholder derfor også taxonomierne. wp:term er altså bare en del af svaret fra WordPress API, når vi beder om opskrifterne med ?_embed. Det her felt indeholder ALLE taxonomier for én opskrift. Hvis der ikke findes nogen (fx hvis _embed mangler), bruges en tom liste [] i stedet. 
     // Kilde: https://developer.wordpress.org/rest-api/using-the-rest-api/global-parameters/#_embed
     const allTaxo = recipe._embedded["wp:term"] || [];
-    let sværhedsgrad = "Ukendt";
-    let tid = "Ukendt";
+    let sværhedsgrad = "Unknown";
+    let tid = "Uknown";
 
     // De taxonomier vi bruger: sværhedsgrad og tilberedningstid
     allTaxo.forEach((taxoGroup) => {
@@ -73,8 +73,8 @@ function displayRecipes(recipes) {
 
     // Når brugeren klikker på opskriften, åbner vi en popup med mere info
     article.addEventListener("click", () => {
-      const beskrivelse = recipe.acf?.infotekst || "No description available.";
-      const portioner = recipe.acf?.antal_portioner || "Serving size unknown";
+      const beskrivelse = recipe.acf?.infotekst || "Unknown";
+      const portioner = recipe.acf?.antal_portioner || "Unknown";
 
 
       document.getElementById("modalBillede").src = img;

@@ -23,8 +23,8 @@ html {
   --Coral: rgba(247, 183, 163, 1);
 
   --smSpacer: 15px;
-  --stdSpacer: 20px;
-  --lgSpacer: 40px;
+  --stdSpacer: 25px;
+  --lgSpacer: 50px;
 
   --font-size-small: 0.8rem;
   --font-size-normal: 1rem;
@@ -163,19 +163,14 @@ h3 {
   padding-left: var(--lgSpacer);
 }
 
-.signup {
-  display: flex;
-  justify-content: space-evenly;
-}
-
 /* Focused Entry Points */
 
 .collectionsEntryPoints {
   display: flex;
-  gap: 2rem;
+  gap: 2.5rem;
   justify-content: center;
   padding: var(--lgSpacer);
-  margin-bottom: 55px;
+  margin-bottom: var(--lgSpacer);
 }
 
 .entryBox {
@@ -185,7 +180,6 @@ h3 {
   border: 1px solid #767676;
   border-radius: 5px;
   width: 450px;
-  background-color: white;
   transition: transform 0.2s ease;
   overflow: hidden;
 }
@@ -196,52 +190,51 @@ h3 {
 
 .entryBox img {
   width: 100%;
-  height: auto;
+  height: 350px;
   display: block;
   margin: 0 auto;
 }
 
 .entryHeader {
   background-color: var(--PalePink);
-  padding: 1rem;
+  padding: var(--stdSpacer);
   text-align: center;
   font-family: "Oooh Baby", sans-serif;
   color: black;
   font-size: var(--font-size-large);
 }
 
-.signupText {
-  flex: 2;
-  width: 500px;
+.signup {
+  display: flex;
+  background-color: var(--Coral);
+  padding: var(--lgSpacer);
 }
+
+.signupText {
+  flex: 1;
+}
+
 .signupText h2 {
-  margin-bottom: 1rem;
   font-size: var(--font-size-xlarge);
 }
 
-.signupText p {
-  font-size: 1rem;
-  margin-bottom: 0;
-}
-
 .signupButtons {
-  padding-top: 50px;
-  flex: 2;
   display: flex;
   flex-direction: column;
+  padding-top: var(--stdSpacer);
+  flex: 1;
   gap: 1rem;
   align-items: center;
 }
 
 .signupButtons button {
-  font-size: 1.1rem;
+  font-size: var(--font-size-normal);
   font-family: "EB Garamond", serif;
-  margin-left: 50px;
-  padding: 0.4rem;
+  padding: 0.5rem;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  width: 350px;
+  width: 400px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.393);
   transition: all 0.3s ease;
 }
@@ -263,8 +256,7 @@ h3 {
 /* Slideshow */
 
 .slideshowContainer {
-  padding: var(--lgSpacer);
-  margin-top: var(--lgSpacer);
+  padding-top: 100px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 .slideshowContainer h3 {
@@ -324,16 +316,18 @@ h3 {
   display: flex;
   justify-content: center;
   gap: 2rem;
+  padding-bottom: var(--lgSpacer);
 }
 
 .slideBtn {
   background: none;
   border: none;
   cursor: pointer;
+  padding-top: var(--smSpacer);
 }
 
 .slideBtn img {
-  width: 40px;
+  width: 35px;
   height: auto;
   transition: transform 0.2s ease;
 }
@@ -451,7 +445,7 @@ footer li {
 }
 
 .filterBox h4 {
-  font-size: var(--font-size-large);;
+  font-size: var(--font-size-large);
   padding-top: var(--stdSpacer);
   color: var(--SweetPurple);
 }
@@ -467,8 +461,6 @@ footer li {
   margin-right: 0.5rem;
   transform: scale(1.2);
 }
-
-
 
 /* Popup Modal */
 
@@ -506,12 +498,12 @@ footer li {
 }
 
 .lukModal {
-    position: absolute;
-      top: 0.1rem;
-      right: 0.6rem;
-      font-size: 2rem;
-      cursor: pointer;
-      color: black;
+  position: absolute;
+  top: 0.1rem;
+  right: 0.6rem;
+  font-size: 2rem;
+  cursor: pointer;
+  color: black;
 }
 
 #modalTitel {
@@ -553,7 +545,6 @@ footer li {
   width: 20px;
   height: 20px;
   object-fit: contain;
-
 }
 
 /* Knap i popup vinduet */
@@ -623,7 +614,7 @@ footer li {
   background-color: var(--Coral);
 }
 
-.collectionTeaser .teaserText{
+.collectionTeaser .teaserText {
   flex: 1;
   font-size: var(--font-size-xlarge);
   font-family: "Oooh Baby", sans-serif;
@@ -642,7 +633,6 @@ footer li {
   transform: scale(1.09);
 }
 
-
 .collectionTeaser img {
   width: 100%;
   max-height: 400px;
@@ -651,13 +641,11 @@ footer li {
   display: block;
 }
 
-
 /* Footer */
 
 footer {
   background-color: var(--PalePink);
   padding: var(--lgSpacer);
-
 }
 
 footer ul {
@@ -681,7 +669,7 @@ footer a {
 
 /* BOKS MED INGREDIENSER OG FREMGANGSMÅDE */
 .titelDescription {
-  display: flex;   
+  display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-between;
@@ -721,17 +709,17 @@ img {
   margin: 40px;
 }
 
-.icons{
+.icons {
   display: flex;
   justify-content: center;
 }
 
-.doings{
+.doings {
   display: grid;
   grid-template-columns: 1fr 2fr;
 }
 
-.icons{
+.icons {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -741,6 +729,3 @@ img {
   display: inline-block;
   vertical-align: middle;
 }
-
-
-
