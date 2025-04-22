@@ -52,7 +52,7 @@
     <main>
       <section class="titelDescription">
         <article class="textGroup">
-          <h1 class="recipeTitel"></h1>
+          <h2 class="recipeTitel"></h2>
           <p class="recipeText"></p>
         </article>
         <figure>
@@ -60,37 +60,43 @@
         </figure>
       </section>
 
-      <div class="recipeBox">
-        <div class="icons">
-          <div class="save">
-            <i class="fa-solid fa-heart"></i>
-            <span class="SaveP"> Save this recipe</span>
+      <section class="opskriftSektion">
+        <div class="recipeBox">
+          <div class="opskriftInfo">
+            <span
+              ><img src="./assets/img/utensils-solid.svg" alt="Servings" />
+              <span id="Portioner"></span
+            ></span>
+            <span
+              ><img src="./assets/img/clock-solid.svg" alt="Time" />
+              <span id="Tid"></span
+            ></span>
+            <span
+              ><img src="./assets/img/kitchen-set-solid.svg" alt="Difficulty" />
+              <span id="Sværhedsgrad"></span
+            ></span>
+            <span
+              ><img src="./assets/img/heart-solid.svg" alt="Save recipe" />
+              <span id="Save this recipe">Save this recipe</span></span
+            >
           </div>
-          <div class="servings">
-            <i class="fa-solid fa-utensils"></i>
-            <span class="servingP"></span>
-          </div>
-          <div class="clock">
-            <i class="fa-solid fa-clock"></i>
-            <span class="clockP"></span>
-          </div>
-          <div class="kitchenSet">
-            <i class="fa-solid fa-kitchen-set"></i>
-            <span class="kitchenSetP"></span>
-          </div>
+          <section class="doings">
+            <p class="ingrediens"></p>
+            <p class="instructions"></p>
+          </section>
         </div>
-        <section class="doings">
-          <p class="ingrediens"></p>
-          <p class="instructions"></p>
-        </section>
-      </div>
+      </section>
     </main>
 
     <footer>
-      <p>Privacy policy</p>
-      <p>Copyright</p>
-      <p>Contact</p>
-      <p>Cookies</p>
+      <ul>
+        <li>
+          <a href="#">Privacy policy</a>
+          <a href="#">Copyright</a>
+          <a href="#">Contact</a>
+          <a href="#">Cookies</a>
+        </li>
+      </ul>
     </footer>
   </body>
 </html>

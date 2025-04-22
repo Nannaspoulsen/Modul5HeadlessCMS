@@ -3,109 +3,117 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title> Home | Culinary Cloud</title>
+    <title>Home | Culinary Cloud</title>
     <link rel="stylesheet" href="./assets/css/style.css" />
     <script src="./assets/js/IndexApp.js" defer></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
       integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-      crossorigin="anonymous" referrerpolicy="no-referrer" />
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
-  <header>
-<nav>
-<div class="navbarLogo">
-  <a href="./Index.html">
-    <img src="./assets/img/image.svg" alt="Logo">
-  </a>
-</div>
+    <header>
+      <nav>
+        <div class="navbarLogo">
+          <a href="./Index.html">
+            <img src="./assets/img/image.svg" alt="Logo" />
+          </a>
+        </div>
 
-<ul>
-  <li>
-    <a class="active" href="./Index.html">Home</a>
-    <a href="./alleOpskrifter.html">All Recipes</a>
-    <a href="./SaesonSamling.html">Spring Collection</a>
-    <a href="./FamilieSamling.html">Cooking With Kids Collection</a>
-  </li>
-</ul>
+        <ul>
+          <li>
+            <a class="active" href="./Index.html">Home</a>
+            <a href="./alleOpskrifter.html">All Recipes</a>
+            <a href="./SaesonSamling.html">Spring Collection</a>
+            <a href="./FamilieSamling.html">Cooking With Kids Collection</a>
+          </li>
+        </ul>
 
-<div class="søgefelt">
-  <input type="text" placeholder="Search...">
-</div>
+        <div class="søgefelt">
+          <input type="text" placeholder="Search..." />
+        </div>
 
-<div class="login">
-  <a href="#"><i class="fa-regular fa-user"></i><span>Login</span></a>
-</div>
-</nav>
-    <div class="hero">
-      <h1 class="heroTitle">Culinary Cloud</h1>
-    </div>
-  </header>
+        <div class="login">
+          <a href="#"><i class="fa-regular fa-user"></i><span>Login</span></a>
+        </div>
+      </nav>
+      <div class="hero">
+        <h1 class="heroTitle">Culinary Cloud</h1>
+      </div>
+    </header>
 
     <main>
-<h2 class="intro">Inspiring recipe collections</h2>
-<p>Welcome to a space where good food meets cozy moments. Whether you're cooking with the kids, planning a spring
-  picnic, or just looking for new everyday favorites — our recipe collections are here to spark joy and bring everyone
-  to the table.</p>
+      <h2 class="intro">Inspiring recipe collections</h2>
+      <p class="mainP">
+        Welcome to a space where good food meets cozy moments. Whether you're
+        cooking with the kids, planning a spring picnic, or just looking for new
+        everyday favorites — our recipe collections are here to spark joy and
+        bring everyone to the table.
+      </p>
 
+      <div class="collectionsEntryPoints">
+        <a href="./SaesonSamling.html" class="entryBox">
+          <div class="entryHeader">Spring Collection</div>
+          <img
+            src="./assets/img/COLOURBOX25645150.jpg"
+            alt="Spring Collection"
+          />
+        </a>
 
+        <a href="./FamilieSamling.html" class="entryBox">
+          <div class="entryHeader">Cooking with Kids Collection</div>
+          <img
+            src="./assets/img/COLOURBOX25864948.jpg"
+            alt="Cooking With Kids Collection"
+          />
+        </a>
+      </div>
 
-<div class="collectionsEntryPoints">
-  <a href="./SaesonSamling.html" class="entryBox">
-    <div class="entryHeader">Spring Collection</div>
-    <img src="./assets/img/COLOURBOX25645150.jpg" alt="Spring Collection">
-  </a>
+      <div class="signup">
+        <div class="signupText">
+          <h2 class="mainH2">Join the community!</h2>
+          <p class="mainP">
+            Create a free family account to receive fun and easy recipe ideas
+            straight to your inbox. Our newsletters are packed with inspiration
+            for busy weekdays, cozy weekends, and everything in between. Save
+            your favorite meals, plan ahead, and turn cooking into quality time.
+          </p>
+        </div>
+        <div class="signupButtons">
+          <button class="signInButton">Sign up</button>
+          <button class="LoginButton">Log in</button>
+        </div>
+      </div>
 
-  <a href="./FamilieSamling.html" class="entryBox">
-    <div class="entryHeader">Cooking with Kids Collection</div>
-    <img src="./assets/img/COLOURBOX25864948.jpg" alt="Cooking With Kids Collection">
-  </a>
-</div>
+      <div class="slideshowContainer">
+        <h3 class="mainH3">Need some inspiration for your next meal?</h3>
 
+        <div class="slideshowWrapper">
+          <div class="slideshow" id="slideshow"></div>
 
-<div class="signup">
-  <div class="signupText">
-    <h2>Join the community!</h2>
-    <p>Create a free family account to receive fun and easy recipe ideas straight to your inbox. Our newsletters are packed
-    with inspiration for busy weekdays, cozy weekends, and everything in between. Save your favorite meals, plan ahead, and
-    turn cooking into quality time.</p>
-  </div>
-  <div class="signupButtons">
-    <button class="signInButton">Sign up</button>
-    <button class="LoginButton">Log in</button>
-  </div>
-</div>
-
-<div class="slideshowContainer">
-  <h3>Need some inspiration for your next meal?</h3>
-
-  <div class="slideshowWrapper">
-    <div class="slideshow" id="slideshow">
-    </div>
-
-    <div class="slideNav">
-      <button class="slideBtn leftBtn">
-        <img src="./assets/img/arrow-left-solid.svg" alt="Til venstre">
-      </button>
-      <button class="slideBtn rightBtn">
-        <img src="./assets/img/arrow-right-solid.svg" alt="Til højre">
-      </button>
-    </div>
-  </div>
-</div>
-
-
-
+          <div class="slideNav">
+            <button class="slideBtn leftBtn">
+              <img src="./assets/img/arrow-left-solid.svg" alt="Til venstre" />
+            </button>
+            <button class="slideBtn rightBtn">
+              <img src="./assets/img/arrow-right-solid.svg" alt="Til højre" />
+            </button>
+          </div>
+        </div>
+      </div>
     </main>
-  <footer>
-    <ul>
-      <li>
-        <a href="#">Privacy policy</a>
-        <a href="#">Copyright</a>
-        <a href="#">Contact</a>
-        <a href="#">Cookies</a>
-      </li>
-    </ul>
-  </footer>
-  
+    <footer>
+      <ul>
+        <li>
+          <a href="#">Privacy policy</a>
+          <a href="#">Copyright</a>
+          <a href="#">Contact</a>
+          <a href="#">Cookies</a>
+        </li>
+      </ul>
+    </footer>
   </body>
 </html>

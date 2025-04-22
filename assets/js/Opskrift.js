@@ -17,19 +17,21 @@ if (!recipeId) {
   fetch(url)
   .then(response => response.json())
   .then(data => {
-    tid = data.tid;
-    sværhedsgrad = data.sværhedsgrad;
-    portioner = data.portioner;
+    tid = data.acf?.tilberedningstid.name;
+    sværhedsgrad = data.acf?.svaerhedsgrad.name;
+    portioner = data.acf?.portioner;
 
-    // Tildel værdierne til DOM-elementer
-    document.querySelector(".servingP").textContent = tid;
-    document.querySelector(".clockP").textContent = sværhedsgrad;
-    document.querySelector(".kitchenSetP").textContent = portioner;
+    console.log(data.acf);
+    //Indsæt i .opskriftInfo
+    document.getElementById("Portioner").textContent = portioner || "Unknown"
+    document.getElementById("Tid").textContent = tid;
+    document.getElementById("Sværhedsgrad").textContent = sværhedsgrad;
+
   })
   .catch(error => console.error("Fejl ved hentning af data: ", error));
   
   
-  
+
   // Hent data via fetch, og oversætter det til json
   fetch(url)
     .then((res) => res.json())
@@ -46,6 +48,16 @@ if (!recipeId) {
       const beskrivelse = recipe.acf?.infotekst || "<p>Description missing.</p>";
       document.querySelector(".recipeText").innerHTML = `
       <p>${beskrivelse}</p>`;
+
+//Fang OpskriftInfo i HTML 
+// function displayOpskriftInfo (opskriftInfo) {
+// const opskriftInfo = document.querySelector(".opskriftInfo");
+// container.innerHTML = "";
+// }
+
+//Indsæt tid, sværhedsgrad og portioner til de tilhørende ikoner.
+
+
 
       // Hent fremgangsmåde fra ACF-gruppefelt
       const fremgangsmaade =
@@ -71,13 +83,14 @@ if (!recipeId) {
 
       // Vis ingredienser
       document.querySelector(".ingrediens").innerHTML = `
-        <h2> Ingrediens </h2>
+        <h2> Ingredients </h2>
         <ul>${ingrediensListe}</ul>
       `;
+      
 
       // Vis fremgangsmåde
     document.querySelector(".instructions").innerHTML = `
-  <h2>Intructions</h2>
+  <h2>Instructions</h2>
   <ol>${fremgangsListe}</ol>
 `;
 

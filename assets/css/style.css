@@ -17,10 +17,10 @@ html {
 
 :root {
   --BackgroundWhite: rgba(254, 245, 255, 1);
-  --PalePink: rgba(241, 217, 222, 1);
+  --PalePink: rgb(255, 248, 249);
   --FreshMint: rgba(202, 233, 140, 1);
   --SweetPurple: rgba(159, 107, 160, 1);
-  --Coral: rgba(247, 183, 163, 1);
+  --Coral: rgb(249, 214, 204);
 
   --smSpacer: 15px;
   --stdSpacer: 25px;
@@ -41,10 +41,22 @@ h6 {
   font-family: "Oooh Baby", sans-serif;
 }
 
+h2 {
+  color: var(--SweetPurple);
+}
+
 p {
   font-family: "EB Garamond", serif;
-  line-height: 1.5;
+  line-height: 1.7;
   max-width: 65ch;
+}
+
+a {
+  font-family: "EB Garamond", serif;
+}
+
+body {
+  background-color: var(--PalePink);
 }
 
 /**********
@@ -133,14 +145,42 @@ nav a.active {
 
 .login a {
   display: flex;
+  flex-direction: column;
   align-items: center;
   font-family: var(EB Garamond), serif;
+  padding: 0px;
 }
 
 .login span {
   font-size: 1.5rem;
   margin-top: 3px;
   margin-left: 10px;
+}
+
+.login i {
+  font-size: 45px;
+}
+
+/* Footer */
+
+footer {
+  background-color: var(--Coral);
+  padding: var(--lgSpacer);
+}
+
+footer ul {
+  list-style-type: none;
+}
+
+footer li {
+  display: inline;
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+}
+
+footer a {
+  color: black;
 }
 
 /* Main */
@@ -151,13 +191,13 @@ nav a.active {
   margin-bottom: var(--smSpacer) 0;
   padding-left: var(--lgSpacer);
 }
-p {
+.mainP {
   font-size: var(--font-size-normal);
   padding-left: var(--lgSpacer);
 }
 
-h2,
-h3 {
+.mainH2,
+.mainH3 {
   font-size: var(--font-size-large);
   margin-bottom: var(--smSpacer);
   padding-left: var(--lgSpacer);
@@ -177,11 +217,11 @@ h3 {
   display: flex;
   flex-direction: column;
   text-decoration: none;
-  border: 1px solid #767676;
   border-radius: 5px;
   width: 450px;
   transition: transform 0.2s ease;
-  overflow: hidden;
+  background-color: var(--Coral);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.393);
 }
 
 .entryBox:hover {
@@ -196,7 +236,7 @@ h3 {
 }
 
 .entryHeader {
-  background-color: var(--PalePink);
+  background-color: var(--Coral);
   padding: var(--stdSpacer);
   text-align: center;
   font-family: "Oooh Baby", sans-serif;
@@ -272,6 +312,7 @@ h3 {
 }
 
 #slideshow {
+  max-width: 100%;
   display: flex;
   overflow-x: auto;
   scroll-behavior: smooth;
@@ -290,7 +331,7 @@ h3 {
   border-radius: 8px;
   background-color: white;
   scroll-snap-align: start;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.393);
   cursor: pointer;
   overflow: hidden;
   display: flex;
@@ -336,24 +377,6 @@ h3 {
   transform: scale(1.2);
 }
 
-/* FOOTER */
-
-footer {
-  background-color: var(--PalePink);
-  padding: var(--lgSpacer);
-}
-
-footer ul {
-  list-style-type: none;
-}
-
-footer li {
-  display: inline;
-  display: flex;
-  justify-content: center;
-  justify-content: space-between;
-}
-
 /******************
 /* ALLEOPSKRIFTER */
 /*****************/
@@ -383,7 +406,6 @@ footer li {
 }
 
 .listOfRecipes {
-  background-color: red;
   height: 900px;
 }
 
@@ -406,6 +428,10 @@ footer li {
   padding-left: var(--lgSpacer);
 }
 
+.collectionsIntro {
+  padding-left: var(--lgSpacer);
+}
+
 .allRecipes {
   display: grid;
   grid-template-columns: 1fr 3fr;
@@ -424,6 +450,10 @@ footer li {
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
+  transition: transform 0.2s ease;
+}
+.recipe:hover {
+  transform: scale(1.1);
 }
 
 .recipe img {
@@ -431,8 +461,11 @@ footer li {
   object-fit: cover;
   width: 100%;
   aspect-ratio: 4/3;
-  border: 1px solid var(--SweetPurple);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.393);
+      cursor: pointer;
+     
 }
+
 
 /* Filterfelt */
 
@@ -492,9 +525,10 @@ footer li {
 
 .modalIndhold img {
   display: block;
-  width: 90%;
+  width: 100%;
   height: 250px;
   object-fit: cover;
+  margin-bottom: var(--smSpacer);
 }
 
 .lukModal {
@@ -529,16 +563,18 @@ footer li {
   margin-bottom: 1rem;
 }
 
+
 .modalInfo {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
   align-items: center;
-  margin-left: var(--stdSpacer);
+  justify-content: space-around;
+  padding: var(--stdSpacer);
 }
 
 .modalInfo span {
   display: flex;
   align-items: center;
+  gap: 8px;
 }
 
 .modalInfo img {
@@ -553,7 +589,7 @@ footer li {
   display: inline-block;
   margin: var(--lgSpacer);
   padding: 1rem 4rem;
-  background-color: var(--PalePink);
+  background-color: var(--Coral);
   color: black;
   text-decoration: none;
   border-radius: 5px;
@@ -587,12 +623,8 @@ footer li {
   gap: 2rem;
 }
 
-.allRecipesFilter {
-  background-color: rgb(25, 177, 25);
-}
 
 .listOfRecipes {
-  background-color: red;
   height: 900px;
 }
 
@@ -612,6 +644,7 @@ footer li {
   grid-template-columns: 1fr 1fr;
   align-items: center;
   background-color: var(--Coral);
+  margin-bottom: var(--lgSpacer);
 }
 
 .collectionTeaser .teaserText {
@@ -641,39 +674,24 @@ footer li {
   display: block;
 }
 
-/* Footer */
-
-footer {
-  background-color: var(--PalePink);
-  padding: var(--lgSpacer);
-}
-
-footer ul {
-  list-style-type: none;
-}
-
-footer li {
-  display: inline;
-  display: flex;
-  justify-content: center;
-  justify-content: space-around;
-}
-
-footer a {
-  color: black;
-}
 
 /**********
 /* OPSKRIFTTER  */
 /**********/
 
 /* BOKS MED INGREDIENSER OG FREMGANGSMÅDE */
+
+.recipeTitel{
+  font-size: var(--font-size-xlarge);
+  color: var(--SweetPurple);
+}
 .titelDescription {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-between;
-  margin: 5rem;
+  margin-inline: 80px;
+  margin-block: var(--lgSpacer);
 }
 
 .textGroup {
@@ -681,51 +699,48 @@ footer a {
   flex-direction: column;
 }
 
-.recipeTitel {
-  margin: 0;
-  padding: 0;
-}
-
-.recipeText {
-  margin-top: 10px;
-  padding: 0;
-}
-
-img {
+.recipeImg {
   max-width: 0 auto;
   height: auto;
-  margin: 0 20px;
 }
+
 .recipeBox {
-  clear: both;
-  background-color: coral;
-  padding-left: 40px;
-  padding-right: 40px;
-  gap: 20px;
-  max-width: auto;
+      background-color: var(--Coral);
+      gap: 20px;
+      display: flex;
+      width: 1265px;
+      flex-wrap: wrap;
+      flex-direction: column;
+      margin: 0 auto;
+      margin-bottom: var(--lgSpacer);
 }
 
-.instructions .ingrediens {
-  margin: 40px;
-}
-
-.icons {
-  display: flex;
-  justify-content: center;
-}
-
-.doings {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-}
-
-.icons {
+.opskriftInfo {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  padding: var(--stdSpacer);
 }
 
-.saveP .servingP .clockP .kitchenSetP {
-  display: inline-block;
-  vertical-align: middle;
+.opskriftInfo span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.opskriftInfo img {
+  width: 32px;
+  height: 32px;
+}
+
+.doings {
+  display: flex;
+  text-align: left;
+  justify-content: space-around;
+  width: 100%;
+  padding: 50px;
+}
+
+.instructions {
+  margin-bottom: 25px;
 }

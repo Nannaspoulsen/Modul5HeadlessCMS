@@ -13,7 +13,7 @@
       content="recipes, cooking, culinary, online cookbook, delicious meals, food inspiration"
     />
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <script src="./assets/js/app.js" defer></script>
+    <script src="./assets/js/AlleOpskrifter.js" defer></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -46,7 +46,7 @@
         </div>
 
         <div class="login">
-          <a href="#"><i class="fa-regular fa-user">Login</i></a>
+          <a href="#"><i class="fa-regular fa-user"></i><span>Login</span></a>
         </div>
       </nav>
       <div class="hero">
@@ -466,6 +466,40 @@
 
         <div class="recipeCards">Her skal opskrifterne vise sig</div>
       </div>
+       <div class="recipeModal hidden">
+        <div class="modalIndhold">
+          <span class="lukModal">&times;</span>
+
+          <img id="modalBillede" src="" alt="" />
+
+          <h3 id="modalTitel"></h3>
+          <p id="modalBeskrivelse"></p>
+
+          <div class="modalInfo">
+            <span
+              ><img src="./assets/img/utensils-solid.svg" alt="Servings" />
+              <span id="modalPortioner"></span
+            ></span>
+            <span
+              ><img src="./assets/img/clock-solid.svg" alt="Time" />
+              <span id="modalTid"></span
+            ></span>
+            <span
+              ><img src="./assets/img/kitchen-set-solid.svg" alt="Difficulty" />
+              <span id="modalSværhedsgrad"></span
+            ></span>
+            <span
+              ><img src="./assets/img/heart-solid.svg" alt="Save recipe" />
+              <span id="Save this recipe"> Save this recipe</span></span
+            >
+          </div>
+
+          <a id="modalLink" href="#" target="_blank" class="recipeButton">
+            View full recipe
+          </a>
+        </div>
+      </div>
+
     </main>
 
     <footer>
