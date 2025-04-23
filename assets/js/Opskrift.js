@@ -1,4 +1,4 @@
-// Hent ID fra URL'en. 
+
 // Params laver et objekt, som kan læse parametre fra den url brugeren er på
 const params = new URLSearchParams(window.location.search);
 //Henter værdien af id'et fra url'en, og gemmer den i en variabel, som hedder "recipeId"
@@ -17,16 +17,21 @@ if (!recipeId) {
   fetch(url)
   .then(response => response.json())
   .then(data => {
-    tid = data.acf?.tilberedningstid.name;
-    sværhedsgrad = data.acf?.svaerhedsgrad.name;
-    portioner = data.acf?.portioner;
+    let tid = data.acf?.tilberedningstid.name;
+    let sværhedsgrad = data.acf?.svaerhedsgrad.name;
+    let portioner = data.acf?.portioner;
 
-    console.log(data.acf);
+    
     //Indsæt i .opskriftInfo
     document.getElementById("Portioner").textContent = portioner || "Unknown"
     document.getElementById("Tid").textContent = tid;
     document.getElementById("Sværhedsgrad").textContent = sværhedsgrad;
 
+    document.querySelector(".recipeTitel").innerHTML = recipe.title.rendered;
+    document.querySelector(".recipeText").innerHTML = recipe.excerpt.rendered;
+
+    document.querySelector(".recipeImg").src = recipe.acf?.billede?.url || "<p>Picture missing</p>";
+    document.querySelector(".recipeImg").alt = recipe.title.rendered;
   })
   .catch(error => console.error("Fejl ved hentning af data: ", error));
   

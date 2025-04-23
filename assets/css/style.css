@@ -462,6 +462,7 @@ footer a {
   display: block;
   object-fit: cover;
   width: 100%;
+  /* aspect-ratio */
   aspect-ratio: 4/3;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.393);
   cursor: pointer;
@@ -564,19 +565,6 @@ footer a {
   font-size: var(--font-size-normal);
   margin-right: var(--lgSpacer);
 }
-
-.recipeButton {
-  background-color: var(--ButtonColor);
-  color: black;
-  font-size: 1rem;
-  padding: 0.8rem 1.5rem;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  margin-bottom: 1rem;
-}
-
 
 .modalInfo {
   display: flex;

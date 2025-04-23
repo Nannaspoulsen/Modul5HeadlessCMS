@@ -7,11 +7,12 @@ document.addEventListener("DOMContentLoaded", () => {
     .then((recipes) => {
       recipes.forEach((recipe) => {
         const title = recipe.title.rendered;
-        const img = recipe.acf?.billede?.url || "./assets/img/fallback.jpg";
+        const img = recipe.acf?.billede?.url || ""
 
         const card = document.createElement("div");
         card.classList.add("slideshowCard");
 
+// $ bruges da img og title er dynamisk alt efter hvilken opskrift der vælges
         card.innerHTML = `
   <div class="cardImage">
     <img src="${img}" alt="${title}">
@@ -21,11 +22,12 @@ document.addEventListener("DOMContentLoaded", () => {
   </div>
 `;
 
-
+//window.location.href åbner en ny fane/vindue med hele opskriften
+//`opskrift.html?id=${recipe.id}`; linker til hele opskriften med et bestemt id
         card.addEventListener("click", () => {
           window.location.href = `opskrift.html?id=${recipe.id}`;
         });
-
+//opskrifterne sættes ind efter hinanden
         slideContainer.appendChild(card);
       });
     })
@@ -34,6 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
   // Pilefunktion – scroll containeren horisontalt
+  //Der scrolles med 300px af gangen når der trykkes på pilene
   document.querySelector(".leftBtn").addEventListener("click", () => {
     document.getElementById("slideshow").scrollLeft -= 300;
   });

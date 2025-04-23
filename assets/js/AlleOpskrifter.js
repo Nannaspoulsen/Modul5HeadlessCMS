@@ -31,6 +31,7 @@ function displayRecipes(recipes) {
   // Vi går gennem alle opskrifter én efter én
   recipes.forEach((recipe) => {
     // Opskriftens titel
+    //rendered er for at få opskriften vist
     const title = recipe.title.rendered;
     // Opskriftens beskrivelse
     const excerpt = recipe.excerpt.rendered;
@@ -39,13 +40,13 @@ function displayRecipes(recipes) {
     // WordPress gemmer taxonomier som separate data, men når vi tilføjer _embed i vores fetch-URL,
     // så sender WordPress taxonomierne med som en del af svaret.
 
-    // Når man bruger ?_embed i en fetch-URL til WordPress API, indsætter WordPress de tilhørende taxonomier under feltet "_embedded", i en nøgle kaldet "wp:term". Den URL vi bruger til at hente opskrifterne, indeholder derfor også taxonomierne. wp:term er altså bare en del af svaret fra WordPress API, når vi beder om opskrifterne med ?_embed. Det her felt indeholder ALLE taxonomier for én opskrift. Hvis der ikke findes nogen (fx hvis _embed mangler), bruges en tom liste [] i stedet. 
+    // Når man bruger ?_embed i en fetch-URL til WordPress API, indsætter WordPress de tilhørende taxonomier under feltet "_embedded", i en nøgle kaldet "wp:term". Den URL vi bruger til at hente opskrifterne, indeholder derfor også taxonomierne. wp:term er altså bare en del af svaret fra WordPress API, når vi beder om opskrifterne med ?_embed. Det her felt indeholder ALLE taxonomier for én opskrift. Hvis der ikke findes nogen (fx hvis _embed mangler), bruges en tom liste "" i stedet. 
     // Kilde: https://developer.wordpress.org/rest-api/using-the-rest-api/global-parameters/#_embed
-    const allTaxo = recipe._embedded["wp:term"] || [];
+    const allTaxo = recipe._embedded["wp:term"] || "";
+    //Fra taxonomierne henter vi sværhedsgrad og tid
     let sværhedsgrad = "Unknown";
     let tid = "Unknown";
-
-    // De taxonomier vi bruger: sværhedsgrad og tilberedningstid
+//Her looper vi igennem og tjekker om der er relevant info/data og hvis ja, så opdateres variablerne
     allTaxo.forEach((taxoGroup) => {
       taxoGroup.forEach((taxo) => {
         if (taxo.taxonomy === "svaerhedsgrad") {
@@ -57,8 +58,8 @@ function displayRecipes(recipes) {
       });
     });
 
-    // Vi henter antal portioner
-    const portioner = recipe.acf?.antal_portioner || "";
+    // Vi henter antal portioner fra FELTGRUPPER - ikke taxonomier. Derfor ser den her anderledes ud end det overstående og indeholder "acf?". Det er de eneste informationer vi skal bruge for nu.
+    const portioner = recipe.acf?.portioner || "";
 
     // Vi laver et HTML-element til opskriften og giver det en klasse
     const article = document.createElement("article");
@@ -72,8 +73,10 @@ function displayRecipes(recipes) {
 
     // Når brugeren klikker på opskriften, åbner vi en popup med mere info
     article.addEventListener("click", () => {
+      //style.overflow = "hidden" sørger for at der ikke kan scrolles på body, når modalen er åbent.
+      document.body.style.overflow = "hidden";
       const beskrivelse = recipe.acf?.infotekst || "Unknown";
-      const portioner = recipe.acf?.antal_portioner || "Unknown";
+      const portioner = recipe.acf?.portioner || "Unknown";
 
 
       document.getElementById("modalBillede").src = img;
@@ -98,12 +101,17 @@ function displayRecipes(recipes) {
 
 // Her lukker vi popup'en hvis brugeren klikker på krydset
 document.querySelector(".lukModal").addEventListener("click", () => {
+  //style.overflow:"auto" sørger for at scroll bliver muligt når modalen lukkes igen
+  document.body.style.overflow = "auto";
   document.querySelector(".recipeModal").classList.add("hidden");
 });
 
+//FILTER FUNKTION //
+
 // Funktion der samler valgte filtre og henter opskrifter baseret på dem
 function getRecipesByFilters() {
-  const filters = document.querySelectorAll(".filter:checked"); // Find alle valgte filtre
+  // filter:cheked vælger alle filter elementer og som er valgt/markeret
+  const filters = document.querySelectorAll(".filter:checked"); 
   const baseUrl =
     "https://www.menneskevaerk.com/wp-json/wp/v2/posts?acf_format=standard&_embed";
 
